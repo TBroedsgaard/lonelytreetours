@@ -10,34 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 
 namespace LonelyTreeTimeLimits
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for NewSaleWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class NewSaleWindow : Window
     {
-        public MainWindow()
+        public NewSaleWindow()
         {
             InitializeComponent();
         }
 
-        private void salesDeleteButton_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
-
-        }
-
-        private void saleNewButton_Click(object sender, RoutedEventArgs e)
-        {
-             NewSaleWindow NewSaleWindow = new NewSaleWindow();
-             NewSaleWindow.Show(); 
-
-
+            NewCustomerDialog customerDialog = new NewCustomerDialog();
+            customerDialog.Show();
         }
     }
 }
