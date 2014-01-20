@@ -15,25 +15,13 @@ using System.Windows.Shapes;
 namespace LonelyTreeTimeLimits
 {
     /// <summary>
-    /// Interaction logic for NewSaleWindow.xaml
+    /// Interaction logic for BookingsWindow.xaml
     /// </summary>
-    public partial class NewSaleWindow : Window
+    public partial class BookingsWindow : Window
     {
-        public NewSaleWindow()
+        public BookingsWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            NewCustomerDialog customerDialog = new NewCustomerDialog();
-            customerDialog.Show();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            BookingsWindow bk = new BookingsWindow();
-            bk.Show();
         }
     }
 }

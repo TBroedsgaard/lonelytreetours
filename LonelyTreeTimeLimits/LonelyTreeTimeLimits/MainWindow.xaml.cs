@@ -23,7 +23,7 @@ namespace LonelyTreeTimeLimits
     {
         public MainWindow()
         {
-            InitializeComponent();
+ InitializeComponent();
         }
 
         private void salesDeleteButton_Click(object sender, RoutedEventArgs e)

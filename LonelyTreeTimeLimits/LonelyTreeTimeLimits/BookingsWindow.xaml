@@ -1,0 +1,26 @@
+﻿<Window x:Class="LonelyTreeTimeLimits.BookingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="BookingsWindow" Height="426.493" Width="734.629">
+    <Grid>
+        <Label Content="New Booking " HorizontalAlignment="Left" Margin="23,22,0,0" VerticalAlignment="Top" Width="180"/>
+        <Label Content="Start date" HorizontalAlignment="Left" Margin="23,71,0,0" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Margin="90,71,0,0" VerticalAlignment="Top"/>
+        <Label Content="End date" HorizontalAlignment="Left" Margin="23,102,0,0" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Margin="90,104,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="261,71,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="BookingType" HorizontalAlignment="Left" Margin="456,73,0,0" VerticalAlignment="Top" Width="87" RenderTransformOrigin="1.751,3.894"/>
+        <Label Content="Supplier Type" HorizontalAlignment="Left" Margin="174,133,0,0" VerticalAlignment="Top" Width="87"/>
+        <ComboBox HorizontalAlignment="Left" Margin="261,133,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Supplier" HorizontalAlignment="Left" Margin="197,71,0,0" VerticalAlignment="Top" Width="59"/>
+        <ComboBox HorizontalAlignment="Left" Margin="565,75,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="F.eks Tour, hotel, cruise etc" HorizontalAlignment="Left" Margin="261,95,0,0" VerticalAlignment="Top" Width="137" FontSize="10"/>
+        <ListBox HorizontalAlignment="Left" Height="148" Margin="23,228,0,0" VerticalAlignment="Top" Width="542"/>
+        <Button Content="New" HorizontalAlignment="Left" Margin="386,73,0,0" VerticalAlignment="Top" Width="44"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="23,155,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Create" HorizontalAlignment="Left" Margin="565,121,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Booking schedule " HorizontalAlignment="Left" Margin="23,197,0,0" VerticalAlignment="Top" Width="152" FontWeight="Bold"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="565,102,0,0" VerticalAlignment="Top" Width="80"/>
+
+    </Grid>
+</Window>
