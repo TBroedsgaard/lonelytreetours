@@ -13,6 +13,8 @@ namespace Model.Controllers
 
         public SaleController(List<ISale> iSales)
         {
+            sales = new List<Sale>();
+
             foreach (ISale iSale in iSales)
             {
                 Sale sale = new Sale(iSale);

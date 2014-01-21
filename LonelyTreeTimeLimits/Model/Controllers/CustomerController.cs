@@ -13,6 +13,8 @@ namespace Model.Controllers
 
         public CustomerController(List<ICustomer> iCustomers)
         {
+            customers = new List<Customer>();
+
             foreach (ICustomer iCustomer in iCustomers)
             {
                 Customer customer = new Customer(iCustomer);
