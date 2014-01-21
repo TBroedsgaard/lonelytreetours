@@ -36,7 +36,7 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public bool CreateSale(ISale iSale)
+        public ISale CreateSale(ISale iSale)
         {
             throw new NotImplementedException();
         }
@@ -46,7 +46,7 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public List<ISale> GetAllSales()
+        public List<ISale> GetSales()
         {
             throw new NotImplementedException();
         }

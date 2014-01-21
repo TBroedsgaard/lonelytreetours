@@ -11,14 +11,15 @@ namespace Model
 {
     public class ModelFacade
     {
-        private List<Sale> sales;
         private DataAccessFacade dataAccessFacade;
         private CustomerController customerController;
+        private SaleController saleController;
 
         public ModelFacade()
         {
             dataAccessFacade = new DataAccessFacade();
             customerController = new CustomerController(dataAccessFacade.GetCustomers());
+            saleController = new SaleController(dataAccessFacade.GetSales());
         }
 
         public ICustomer CreateCustomer(ICustomer iCustomer)
@@ -59,32 +60,29 @@ namespace Model
 
         public ISale CreateSale(ISale iSale)
         {
-            Sale sale = new Sale(iSale);
-            if (dataAccessFacade.CreateSale(iSale))
+            iSale = saleController.Create(iSale);
+            iSale = dataAccessFacade.CreateSale(iSale);
+            if (iSale.Deleted == false)
             {
-                sales.Add(sale);
+                saleController.Update(iSale); // update deleted status and set id
             }
 
-            return (ISale)sale;
+            return iSale;
         }
 
-        public bool UpdateSale(ISale iSale)
+        public ISale UpdateSale(ISale iSale)
         {
-            if (dataAccessFacade.UpdateSale(iSale))
-            {
-                Sale sale = new Sale(iSale);
-                // find sale with id, delete from list, add the new one
-            }
-            return false;
+            iSale = saleController.Update(iSale);
+            dataAccessFacade.UpdateSale(iSale);
+
+            return iSale;
         }
 
         public bool DeleteSale(ISale iSale)
         {
+            iSale = saleController.Delete(iSale);
             if (dataAccessFacade.DeleteSale(iSale))
             {
-                Sale sale = new Sale(iSale);
-                sales.Remove(sale); // TODO: BUG!!! Needs identifier, just as Update does - try typecasting and catch any exceptions? No more ID...
-
                 return true;
             }
 
@@ -93,24 +91,7 @@ namespace Model
 
         public List<ISale> GetSales()
         {
-            if (sales == null)
-            {
-                loadSales();
-            }
-
-            List<ISale> iSales = sales.Cast<ISale>().ToList();
-            return iSales;
-        }
-
-        private void loadSales()
-        {
-            List<ISale> iSales = dataAccessFacade.GetAllSales();
-
-            foreach (ISale iSale in iSales)
-            {
-                Sale sale = new Sale(iSale);
-                sales.Add(sale);
-            }
+            return saleController.GetAll();
         }
     }
 }

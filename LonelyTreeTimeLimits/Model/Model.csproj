@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ModelController.cs" />
+    <Compile Include="Controllers\SaleController.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="ModelFacade.cs" />
