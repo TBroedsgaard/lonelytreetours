@@ -7,9 +7,8 @@ using Interfaces;
 
 namespace Model
 {
-    internal class Customer
+    internal class Customer : Entity, ICustomer
     {
-        public int CustomerId { get; set; }
         public CustomerType CustomerType { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -21,7 +20,6 @@ namespace Model
         public string Skype { get; set; }
         public string Comment { get; set; }
         public DateTime CreatedDate { get; set; }
-        public bool Deleted { get; set; }
 
         public Customer(ICustomer iCustomer)
         {

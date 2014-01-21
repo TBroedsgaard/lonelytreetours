@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Interfaces
 {
-    public interface ICustomer
+    public interface ICustomer : IEntity
     {
-        int CustomerId { get; set; }
         CustomerType CustomerType { get; set; }
         string FirstName { get; set; }
         string LastName { get; set; }
@@ -20,6 +19,5 @@ namespace Interfaces
         string Skype { get; set; }
         string Comment { get; set; }
         DateTime CreatedDate { get; set; }
-        bool Deleted { get; set; }
     }
 }
