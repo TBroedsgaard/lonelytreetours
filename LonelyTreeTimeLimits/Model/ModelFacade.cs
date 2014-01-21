@@ -22,13 +22,13 @@ namespace Model
             saleController = new SaleController(dataAccessFacade.GetSales());
         }
 
-        public ICustomer CreateCustomer(ICustomer iCustomer)
+        public ICustomer CreateCustomer()
         {
-            iCustomer = customerController.Create(iCustomer);
+            ICustomer iCustomer = customerController.Create();
             iCustomer = dataAccessFacade.CreateCustomer(iCustomer);
             if (iCustomer.Deleted == false)
             {
-                customerController.Update(iCustomer);
+                UpdateCustomer(iCustomer);
             }
 
             return iCustomer;
@@ -58,9 +58,9 @@ namespace Model
             return customerController.GetAll();
         }
 
-        public ISale CreateSale(ISale iSale)
+        public ISale CreateSale()
         {
-            iSale = saleController.Create(iSale);
+            ISale iSale = saleController.Create();
             iSale = dataAccessFacade.CreateSale(iSale);
             if (iSale.Deleted == false)
             {

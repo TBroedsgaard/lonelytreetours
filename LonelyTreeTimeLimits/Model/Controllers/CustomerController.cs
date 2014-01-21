@@ -22,10 +22,10 @@ namespace Model.Controllers
             }
         }
 
-        public override ICustomer Create(ICustomer iCustomer)
+        public override ICustomer Create()
         {
-            Customer customer = new Customer(iCustomer);
-            customer.Deleted = true; // set as deleted, only when saved in dataAccess it can be set as Undeleted
+            Customer customer = new Customer();
+            customer.Deleted = true;
             customers.Add(customer);
 
             return (ICustomer)customer;

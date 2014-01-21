@@ -9,7 +9,7 @@ namespace Model.Controllers
 {
     internal abstract class ModelController<T> where T : IEntity
     {
-        public abstract T Create(T t);
+        public abstract T Create();
         public abstract T Update(T t);
         public T Delete(T t)
         {

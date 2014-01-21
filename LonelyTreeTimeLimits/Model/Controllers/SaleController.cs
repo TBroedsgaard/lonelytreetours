@@ -22,9 +22,9 @@ namespace Model.Controllers
             }
         }
 
-        public override ISale Create(ISale iSale)
+        public override ISale Create()
         {
-            Sale sale = new Sale(iSale);
+            Sale sale = new Sale();
             sale.Deleted = true;
             sales.Add(sale);
 
