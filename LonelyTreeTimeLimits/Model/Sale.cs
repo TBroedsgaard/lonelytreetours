@@ -9,10 +9,12 @@ namespace Model
 {
     internal class Sale : ISale
     {
+        public int SaleId { get; set; }
         public SaleStatus SaleStatus { get; set; }
         public DateTime CreatedDate { get; set; }
         public string SpecialRequests { get; set; }
         public ICustomer Customer { get; set; }
+        public bool Deleted { get; set; }
 
         public Sale(ISale iSale)
         { 
