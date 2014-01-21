@@ -33,6 +33,7 @@ namespace Model
             LastName = iCustomer.LastName;
             PhoneNumber = iCustomer.PhoneNumber;
             Skype = iCustomer.Skype;
+            LastUpdated = DateTime.Now;
         }
 
         public Customer()

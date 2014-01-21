@@ -5,53 +5,47 @@ using System.Text;
 using System.Threading.Tasks;
 using Interfaces;
 using DataAccess;
+using Model.Controllers;
 
 namespace Model
 {
     public class ModelFacade
     {
-        private List<Customer> customers;
         private List<Sale> sales;
         private DataAccessFacade dataAccessFacade;
+        private CustomerController customerController;
 
         public ModelFacade()
         {
             dataAccessFacade = new DataAccessFacade();
+            customerController = new CustomerController(dataAccessFacade.GetCustomers());
         }
 
-        public bool CreateCustomer(ICustomer iCustomer)
+        public ICustomer CreateCustomer(ICustomer iCustomer)
         {
-            if (dataAccessFacade.CreateCustomer(iCustomer))
+            iCustomer = customerController.Create(iCustomer);
+            iCustomer = dataAccessFacade.CreateCustomer(iCustomer);
+            if (iCustomer.Deleted == false)
             {
-                Customer customer = new Customer(iCustomer);
-                customers.Add(customer);
-
-                return true;
+                customerController.Update(iCustomer);
             }
 
-            return false;
+            return iCustomer;
         }
 
-        public bool UpdateCustomer(ICustomer iCustomer)
+        public ICustomer UpdateCustomer(ICustomer iCustomer)
         {
-            if (dataAccessFacade.UpdateCustomer(iCustomer))
-            {
-                Customer customer = new Customer(iCustomer); // Creating a new object since I need to add it to the list anyway
-                // find customer with id, delete from list, add the new one
+            iCustomer = customerController.Update(iCustomer);
+            dataAccessFacade.UpdateCustomer(iCustomer);
 
-                return true;
-            }
-
-            return false;
+            return iCustomer;
         }
 
         public bool DeleteCustomer(ICustomer iCustomer)
         {
+            iCustomer = customerController.Delete(iCustomer);
             if (dataAccessFacade.DeleteCustomer(iCustomer))
-            { 
-                Customer customer = new Customer(iCustomer); // no need to create new object, just find the one from the iCustomer id
-                // find customer with id, set Deleted bit
-
+            {
                 return true;
             }
 
@@ -60,37 +54,18 @@ namespace Model
 
         public List<ICustomer> GetCustomers()
         {
-            if (customers == null)
-            {
-                loadCustomers();
-            }
-
-            List<ICustomer> iCustomers = customers.Cast<ICustomer>().ToList();
-            return iCustomers;
+            return customerController.GetAll();
         }
 
-        private void loadCustomers()
-        {
-            List<ICustomer> iCustomers = dataAccessFacade.GetAllCustomers();
-
-            foreach (ICustomer iCustomer in iCustomers)
-            {
-                Customer customer = new Customer(iCustomer);
-                customers.Add(customer);
-            }
-        }
-
-        public bool CreateSale(ISale iSale)
+        public ISale CreateSale(ISale iSale)
         {
             Sale sale = new Sale(iSale);
             if (dataAccessFacade.CreateSale(iSale))
             {
                 sales.Add(sale);
-
-                return true;
             }
 
-            return false;
+            return (ISale)sale;
         }
 
         public bool UpdateSale(ISale iSale)

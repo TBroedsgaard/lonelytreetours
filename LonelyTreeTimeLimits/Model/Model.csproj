@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ModelController.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Entity.cs" />

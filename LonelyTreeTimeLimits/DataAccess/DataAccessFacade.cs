@@ -9,8 +9,9 @@ namespace DataAccess
 {
     public class DataAccessFacade
     {
-        public bool CreateCustomer(ICustomer iCustomer)
+        public ICustomer CreateCustomer(ICustomer iCustomer)
         {
+            // assign Id here - or in model?
             throw new NotImplementedException();
         }
 
@@ -24,8 +25,9 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public List<ICustomer> GetAllCustomers()
+        public List<ICustomer> GetCustomers()
         {
+            // must return empty list and not null
             throw new NotImplementedException();
         }
 
