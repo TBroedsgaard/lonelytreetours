@@ -40,9 +40,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Booking.cs" />
+    <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ModelController.cs" />
+    <Compile Include="Controllers\PaymentContractController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Controllers\PaymentRuleCatalogController.cs" />
+    <Compile Include="Controllers\PaymentRuleController.cs" />
     <Compile Include="Controllers\SaleController.cs" />
+    <Compile Include="Controllers\SupplierController.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="ModelFacade.cs" />
