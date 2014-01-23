@@ -70,5 +70,20 @@ namespace Model.Controllers
 
             return null;
         }
+
+        public List<IPaymentContract> CreatePaymentContracts(IBooking iBooking, List<IPaymentRule> iPaymentRules)
+        {
+            List<IPaymentContract> newPaymentContracts = new List<IPaymentContract>();
+            foreach (IPaymentRule iPaymentRule in iPaymentRules)
+            {
+                // WARNING STUFF NOT BEING SAVED - USE SAME PROCEDURE AS CREATE()
+                // MAYBE STEP IT THROUGH THE MODELFACADE...
+                PaymentContract paymentContract = new PaymentContract(iBooking, iPaymentRule);
+                paymentContracts.Add(paymentContract);
+                newPaymentContracts.Add(paymentContract);
+            }
+
+            return newPaymentContracts;
+        }
     }
 }

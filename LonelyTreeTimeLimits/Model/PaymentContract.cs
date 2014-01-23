@@ -27,5 +27,21 @@ namespace Model
             Invoice = iPaymentContract.Invoice;
         }
 
+        public PaymentContract(IBooking iBooking, IPaymentRule iPaymentRule)
+        {
+            Booking = iBooking;
+
+            if (iPaymentRule.ReferenceDate == ReferenceDate.BookingEndDate)
+            {
+                DueDate = iBooking.EndDate.AddDays(iPaymentRule.PaymentDate);
+            }
+            else 
+            {
+                DueDate = iBooking.StartDate.AddDays(iPaymentRule.PaymentDate);
+            }
+
+            Amount = iBooking.TotalAmount * iPaymentRule.Percentage;
+            Valuta = iBooking.Valuta;
+        }
     }
 }

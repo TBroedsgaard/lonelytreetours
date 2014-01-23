@@ -14,12 +14,52 @@ namespace Model
         private DataAccessFacade dataAccessFacade;
         private CustomerController customerController;
         private SaleController saleController;
+        private PaymentRuleCatalogController paymentRuleCatalogController;
+        private PaymentContractController paymentContractController;
+        private PaymentRuleController paymentRuleController;
 
         public ModelFacade()
         {
             dataAccessFacade = new DataAccessFacade();
             customerController = new CustomerController(dataAccessFacade.GetCustomers());
             saleController = new SaleController(dataAccessFacade.GetSales());
+            paymentRuleCatalogController = new PaymentRuleCatalogController(dataAccessFacade.GetPaymentRuleCatalogs());
+        }
+
+        public IPaymentRuleCatalog GetPaymentRuleCatalog(IBooking iBooking)
+        {
+            IPaymentRuleCatalog prc = paymentRuleCatalogController.GetPaymentRuleCatalog(iBooking);
+            if (prc == null)
+            {
+                prc = CreatePaymentRuleCatalog();
+            }
+
+            return prc;
+        }
+
+        public List<IPaymentContract> CreatePaymentContracts(IBooking iBooking, IPaymentRuleCatalog iPaymentRuleCatalog)
+        {
+            List<IPaymentRule> iPaymentRules = paymentRuleController.GetPaymentRules(iPaymentRuleCatalog);
+            List<IPaymentContract> iPaymentContracts = paymentContractController.CreatePaymentContracts(iBooking, iPaymentRules);
+
+            return null;
+        }
+
+        public IPaymentRuleCatalog CreatePaymentRuleCatalog()
+        {
+            IPaymentRuleCatalog iPaymentRuleCatalog = paymentRuleCatalogController.Create();
+            iPaymentRuleCatalog = dataAccessFacade.CreatePaymentRuleCatalog(iPaymentRuleCatalog);
+            if (iPaymentRuleCatalog.Deleted == false)
+            {
+                UpdatePaymentRuleCatalog(iPaymentRuleCatalog);
+            }
+
+            return iPaymentRuleCatalog;
+        }
+
+        private void UpdatePaymentRuleCatalog(IPaymentRuleCatalog iPaymentRuleCatalog)
+        {
+            throw new NotImplementedException();
         }
 
         public ICustomer CreateCustomer()

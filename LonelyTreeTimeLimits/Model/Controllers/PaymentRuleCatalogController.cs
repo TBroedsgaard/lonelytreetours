@@ -69,5 +69,27 @@ namespace Model.Controllers
 
             return null;
         }
+
+        internal IPaymentRuleCatalog GetPaymentRuleCatalog(IBooking iBooking)
+        {
+            PaymentRuleCatalog prc = findPaymentRuleCatalog(iBooking);
+
+            return prc;
+        }
+
+        private PaymentRuleCatalog findPaymentRuleCatalog(IBooking iBooking)
+        {
+            foreach (PaymentRuleCatalog prc in paymentRuleCatalogs)
+            {
+                if (prc.Supplier == iBooking.Supplier
+                    && prc.Customer == iBooking.Sale.Customer
+                    && prc.BookingType == iBooking.BookingType)
+                {
+                    return prc;
+                }
+            }
+
+            return null;
+        }
     }
 }

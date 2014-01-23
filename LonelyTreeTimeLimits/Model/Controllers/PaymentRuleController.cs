@@ -69,5 +69,19 @@ namespace Model.Controllers
 
             return null;
         }
+
+        public List<IPaymentRule> GetPaymentRules(IPaymentRuleCatalog iPaymentRuleCatalog)
+        {
+            List<IPaymentRule> iPaymentRules = new List<IPaymentRule>();
+            foreach (PaymentRule paymentRule in paymentRules)
+            {
+                if (paymentRule.PaymentRuleCatalog.Id == iPaymentRuleCatalog.Id)
+                {
+                    iPaymentRules.Add(paymentRule);
+                }
+            }
+
+            return iPaymentRules;
+        }
     }
 }

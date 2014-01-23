@@ -50,5 +50,15 @@ namespace DataAccess
         {
             throw new NotImplementedException();
         }
+
+        public IPaymentRuleCatalog CreatePaymentRuleCatalog(IPaymentRuleCatalog iPaymentRuleCatalog)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<IPaymentRuleCatalog> GetPaymentRuleCatalogs()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
