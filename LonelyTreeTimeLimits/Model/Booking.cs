@@ -17,5 +17,20 @@ namespace Model
         public decimal TotalAmount { get; set; }
         public string Valuta { get; set; }
         public string Notes { get; set; }
+
+        public Booking()
+        { }
+
+        public Booking(IBooking iBooking)
+        {
+            Sale = iBooking.Sale;
+            Supplier = iBooking.Supplier;
+            BookingType = iBooking.BookingType;
+            StartDate = iBooking.StartDate;
+            EndDate = iBooking.EndDate;
+            TotalAmount = iBooking.TotalAmount;
+            Valuta = iBooking.Valuta;
+            Notes = iBooking.Notes;
+        }
     }
 }

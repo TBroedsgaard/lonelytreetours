@@ -18,5 +18,21 @@ namespace Model
         public DateTime CreatedDate { get; set; }
         public string Comment { get; set; }
         public string Website { get; set; }
+
+        public Supplier()
+        { }
+
+        public Supplier(ISupplier iSupplier)
+        {
+            SupplierType = iSupplier.SupplierType;
+            Name = iSupplier.Name;
+            ContactPerson = iSupplier.ContactPerson;
+            Email = iSupplier.Email;
+            PhoneNumber = iSupplier.PhoneNumber;
+            Skype = iSupplier.Skype;
+            CreatedDate = iSupplier.CreatedDate;
+            Comment = iSupplier.Comment;
+            Website = iSupplier.Website;
+        }
     }
 }

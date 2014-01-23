@@ -12,5 +12,15 @@ namespace Model
         public ISupplier Supplier { get; set; }
         public ICustomer Customer { get; set; }
         public BookingType BookingType { get; set; }
+
+        public PaymentRuleCatalog()
+        { }
+
+        public PaymentRuleCatalog(IPaymentRuleCatalog iPaymentRuleCatalog)
+        {
+            Supplier = iPaymentRuleCatalog.Supplier;
+            Customer = iPaymentRuleCatalog.Customer;
+            BookingType = iPaymentRuleCatalog.BookingType;
+        }
     }
 }

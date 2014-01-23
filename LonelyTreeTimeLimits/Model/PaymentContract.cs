@@ -14,5 +14,18 @@ namespace Model
         public decimal Amount { get; set; }
         public string Valuta { get; set; }
         public string Invoice { get; set; }
+
+        public PaymentContract()
+        { }
+
+        public PaymentContract(IPaymentContract iPaymentContract)
+        {
+            Booking = iPaymentContract.Booking;
+            DueDate = iPaymentContract.DueDate;
+            Amount = iPaymentContract.Amount;
+            Valuta = iPaymentContract.Valuta;
+            Invoice = iPaymentContract.Invoice;
+        }
+
     }
 }

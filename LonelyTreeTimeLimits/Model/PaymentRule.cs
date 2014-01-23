@@ -14,5 +14,17 @@ namespace Model
         public int PaymentDate { get; set; }
         public decimal Percentage { get; set; }
         public string Description { get; set; }
+
+        public PaymentRule()
+        { }
+
+        public PaymentRule(IPaymentRule iPaymentRule)
+        {
+            PaymentRuleCatalog = iPaymentRule.PaymentRuleCatalog;
+            ReferenceDate = iPaymentRule.ReferenceDate;
+            PaymentDate = iPaymentRule.PaymentDate;
+            Percentage = iPaymentRule.Percentage;
+            Description = iPaymentRule.Description;
+        }
     }
 }
