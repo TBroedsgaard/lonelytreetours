@@ -8,6 +8,7 @@ namespace Interfaces
 {
     public interface IPaymentRule : IEntity
     {
+        IPaymentRuleCatalog PaymentRuleCatalog { get; set; }
         ReferenceDate ReferenceDate { get; set; }
         int PaymentDate { get; set; }
         decimal Percentage { get; set; }

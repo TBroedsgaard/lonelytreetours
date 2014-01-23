@@ -8,6 +8,7 @@ namespace Interfaces
 {
     public interface IPaymentContract : IEntity
     {
+        IBooking Booking { get; set; }
         DateTime DueDate { get; set; }
         decimal Amount { get; set; }
         string Valuta { get; set; }

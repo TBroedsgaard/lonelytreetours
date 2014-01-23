@@ -8,6 +8,8 @@ namespace Interfaces
 {
     public interface IPaymentRuleCatalog : IEntity
     {
-
+        ISupplier Supplier { get; set; }
+        ICustomer Customer { get; set; }
+        BookingType BookingType { get; set; }
     }
 }
