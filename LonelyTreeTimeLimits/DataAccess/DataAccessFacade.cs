@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Interfaces;
+using ImpromptuInterface;
 
 namespace DataAccess
 {
@@ -28,7 +29,30 @@ namespace DataAccess
         public List<ICustomer> GetCustomers()
         {
             // must return empty list and not null
-            throw new NotImplementedException();
+            List<ICustomer> iCustomers = new List<ICustomer>();
+
+            var customer = new 
+            {
+                BirthDate = DateTime.Now,
+                Comment = "This is a comment",
+                Country = "Country",
+                CreatedDate = DateTime.Now,
+                CustomerType = CustomerType.Person,
+                Email = "email",
+                FirstName = "Peter",
+                LastName = "Olsen",
+                PhoneNumber = "12345678",
+                Skype = "Skype",
+                LastUpdated = DateTime.Now
+            };
+
+            ICustomer iCustomer = customer.ActLike<ICustomer>();
+
+            iCustomers.Add(iCustomer);
+
+            return iCustomers;
+
+            
         }
 
         public bool UpdateSale(ISale iSale)
@@ -48,7 +72,8 @@ namespace DataAccess
 
         public List<ISale> GetSales()
         {
-            throw new NotImplementedException();
+            return new List<ISale>();
+            //throw new NotImplementedException();
         }
     }
 }

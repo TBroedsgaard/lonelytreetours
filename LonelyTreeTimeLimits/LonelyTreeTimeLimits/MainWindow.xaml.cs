@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Model;
+
 namespace LonelyTreeTimeLimits
 {
     /// <summary>
@@ -23,6 +25,9 @@ namespace LonelyTreeTimeLimits
         public MainWindow()
         {
             InitializeComponent();
+
+            ModelFacade mf = new ModelFacade();
+
         }
     }
 }
