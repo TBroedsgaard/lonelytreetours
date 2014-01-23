@@ -54,8 +54,10 @@ namespace Model.Controllers
 
         private Customer findCustomer(int? id)
         {
-            if (id == null) 
+            if (id == null)
+            {
                 return null;
+            }
 
             foreach (Customer customer in customers)
             {
