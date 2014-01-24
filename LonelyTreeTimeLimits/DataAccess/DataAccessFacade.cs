@@ -60,5 +60,30 @@ namespace DataAccess
         {
             throw new NotImplementedException();
         }
+
+        public IPaymentContract CreatePaymentContract(IPaymentContract iPaymentContract)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdatePaymentContract(IPaymentContract iPaymentContract)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdatePaymentRuleCatalog(IPaymentRuleCatalog iPaymentRuleCatalog)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<IPaymentRule> GetPaymentRules()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<IPaymentContract> GetPaymentContracts()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

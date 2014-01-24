@@ -31,6 +31,15 @@ namespace Model.Controllers
             return paymentContract;
         }
 
+        public IPaymentContract Create(IBooking iBooking, IPaymentRule iPaymentRule)
+        {
+            PaymentContract paymentContract = new PaymentContract(iBooking, iPaymentRule);
+            paymentContract.Deleted = true;
+            paymentContracts.Add(paymentContract);
+
+            return paymentContract;
+        }
+
         public override IPaymentContract Update(IPaymentContract iPaymentContract)
         {
             PaymentContract oldPaymentContract = findPaymentContract(iPaymentContract.Id);
@@ -71,19 +80,6 @@ namespace Model.Controllers
             return null;
         }
 
-        public List<IPaymentContract> CreatePaymentContracts(IBooking iBooking, List<IPaymentRule> iPaymentRules)
-        {
-            List<IPaymentContract> newPaymentContracts = new List<IPaymentContract>();
-            foreach (IPaymentRule iPaymentRule in iPaymentRules)
-            {
-                // WARNING STUFF NOT BEING SAVED - USE SAME PROCEDURE AS CREATE()
-                // MAYBE STEP IT THROUGH THE MODELFACADE...
-                PaymentContract paymentContract = new PaymentContract(iBooking, iPaymentRule);
-                paymentContracts.Add(paymentContract);
-                newPaymentContracts.Add(paymentContract);
-            }
 
-            return newPaymentContracts;
-        }
     }
 }

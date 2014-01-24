@@ -24,25 +24,8 @@ namespace Model
             customerController = new CustomerController(dataAccessFacade.GetCustomers());
             saleController = new SaleController(dataAccessFacade.GetSales());
             paymentRuleCatalogController = new PaymentRuleCatalogController(dataAccessFacade.GetPaymentRuleCatalogs());
-        }
-
-        public IPaymentRuleCatalog GetPaymentRuleCatalog(IBooking iBooking)
-        {
-            IPaymentRuleCatalog prc = paymentRuleCatalogController.GetPaymentRuleCatalog(iBooking);
-            if (prc == null)
-            {
-                prc = CreatePaymentRuleCatalog();
-            }
-
-            return prc;
-        }
-
-        public List<IPaymentContract> CreatePaymentContracts(IBooking iBooking, IPaymentRuleCatalog iPaymentRuleCatalog)
-        {
-            List<IPaymentRule> iPaymentRules = paymentRuleController.GetPaymentRules(iPaymentRuleCatalog);
-            List<IPaymentContract> iPaymentContracts = paymentContractController.CreatePaymentContracts(iBooking, iPaymentRules);
-
-            return null;
+            paymentContractController = new PaymentContractController(dataAccessFacade.GetPaymentContracts());
+            paymentRuleController = new PaymentRuleController(dataAccessFacade.GetPaymentRules());
         }
 
         public IPaymentRuleCatalog CreatePaymentRuleCatalog()
@@ -57,9 +40,62 @@ namespace Model
             return iPaymentRuleCatalog;
         }
 
-        private void UpdatePaymentRuleCatalog(IPaymentRuleCatalog iPaymentRuleCatalog)
+        public IPaymentRuleCatalog UpdatePaymentRuleCatalog(IPaymentRuleCatalog iPaymentRuleCatalog)
         {
-            throw new NotImplementedException();
+            iPaymentRuleCatalog = paymentRuleCatalogController.Update(iPaymentRuleCatalog);
+            dataAccessFacade.UpdatePaymentRuleCatalog(iPaymentRuleCatalog);
+
+            return iPaymentRuleCatalog;
+        }
+
+        public IPaymentRuleCatalog GetPaymentRuleCatalog(IBooking iBooking)
+        {
+            IPaymentRuleCatalog prc = paymentRuleCatalogController.GetPaymentRuleCatalog(iBooking);
+            if (prc == null)
+            {
+                prc = CreatePaymentRuleCatalog();
+            }
+
+            return prc;
+        }
+
+        public List<IPaymentRule> GetPaymentRules(IPaymentRuleCatalog iPaymentRuleCatalog)
+        { 
+            List<IPaymentRule> iPaymentRules = paymentRuleController.GetPaymentRules(iPaymentRuleCatalog);
+            return iPaymentRules;
+        }
+
+        public List<IPaymentContract> CreatePaymentContracts(IBooking iBooking, List<IPaymentRule> iPaymentRules)
+        {
+            List<IPaymentContract> newPaymentContracts = new List<IPaymentContract>();
+
+            foreach (IPaymentRule iPaymentRule in iPaymentRules)
+            {
+                IPaymentContract paymentContract = CreatePaymentContract(iBooking, iPaymentRule);
+                newPaymentContracts.Add(paymentContract);
+            }
+
+            return newPaymentContracts;
+        }
+
+        public IPaymentContract CreatePaymentContract(IBooking iBooking, IPaymentRule iPaymentRule)
+        {
+            IPaymentContract iPaymentContract = paymentContractController.Create(iBooking, iPaymentRule);
+            iPaymentContract = dataAccessFacade.CreatePaymentContract(iPaymentContract);
+            if (iPaymentContract.Deleted == false)
+            {
+                UpdatePaymentContract(iPaymentContract);
+            }
+
+            return iPaymentContract;
+        }
+
+        public IPaymentContract UpdatePaymentContract(IPaymentContract iPaymentContract)
+        {
+            iPaymentContract = paymentContractController.Update(iPaymentContract);
+            dataAccessFacade.UpdatePaymentContract(iPaymentContract);
+
+            return iPaymentContract;
         }
 
         public ICustomer CreateCustomer()
