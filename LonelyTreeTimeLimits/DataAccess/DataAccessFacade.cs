@@ -12,12 +12,13 @@ namespace DataAccess
         public ICustomer CreateCustomer(ICustomer iCustomer)
         {
             // assign Id here - or in model?
-            throw new NotImplementedException();
+            iCustomer.Deleted = false;
+            return iCustomer;
         }
 
         public bool UpdateCustomer(ICustomer iCustomer)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public bool DeleteCustomer(ICustomer iCustomer)
@@ -28,17 +29,21 @@ namespace DataAccess
         public List<ICustomer> GetCustomers()
         {
             // must return empty list and not null
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            List<ICustomer> iCustomers = new List<ICustomer>();
+            return iCustomers;
         }
 
         public bool UpdateSale(ISale iSale)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public ISale CreateSale(ISale iSale)
         {
-            throw new NotImplementedException();
+            iSale.Deleted = false;
+            return iSale;
+            //throw new NotImplementedException();
         }
 
         public bool DeleteSale(ISale iSale)
@@ -48,42 +53,71 @@ namespace DataAccess
 
         public List<ISale> GetSales()
         {
-            throw new NotImplementedException();
+            return new List<ISale>();
         }
 
         public IPaymentRuleCatalog CreatePaymentRuleCatalog(IPaymentRuleCatalog iPaymentRuleCatalog)
         {
-            throw new NotImplementedException();
+            iPaymentRuleCatalog.Deleted = false;
+            return iPaymentRuleCatalog;
         }
 
         public List<IPaymentRuleCatalog> GetPaymentRuleCatalogs()
         {
-            throw new NotImplementedException();
+            return new List<IPaymentRuleCatalog>();
         }
 
         public IPaymentContract CreatePaymentContract(IPaymentContract iPaymentContract)
         {
-            throw new NotImplementedException();
+            iPaymentContract.Deleted = false;
+            return iPaymentContract;
         }
 
-        public void UpdatePaymentContract(IPaymentContract iPaymentContract)
+        public bool UpdatePaymentContract(IPaymentContract iPaymentContract)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
-        public void UpdatePaymentRuleCatalog(IPaymentRuleCatalog iPaymentRuleCatalog)
+        public bool UpdatePaymentRuleCatalog(IPaymentRuleCatalog iPaymentRuleCatalog)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public List<IPaymentRule> GetPaymentRules()
         {
-            throw new NotImplementedException();
+            return new List<IPaymentRule>();
         }
 
         public List<IPaymentContract> GetPaymentContracts()
         {
-            throw new NotImplementedException();
+            return new List<IPaymentContract>();
+        }
+
+        public List<IBooking> GetBookings()
+        {
+            return new List<IBooking>();
+        }
+
+        public IBooking CreateBooking(IBooking iBooking)
+        {
+            iBooking.Deleted = false;
+            return iBooking;
+        }
+
+        public bool UpdateBooking(IBooking iBooking)
+        {
+            return true;
+        }
+
+        public IPaymentRule CreatePaymentRule(IPaymentRule iPaymentRule)
+        {
+            iPaymentRule.Deleted = false;
+            return iPaymentRule;
+        }
+
+        public bool UpdatePaymentRule(IPaymentRule iPaymentRule)
+        {
+            return true;
         }
     }
 }

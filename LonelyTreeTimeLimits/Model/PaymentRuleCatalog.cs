@@ -16,6 +16,13 @@ namespace Model
         public PaymentRuleCatalog()
         { }
 
+        public PaymentRuleCatalog(IBooking iBooking)
+        {
+            Supplier = iBooking.Supplier;
+            Customer = iBooking.Sale.Customer;
+            BookingType = iBooking.BookingType;
+        }
+
         public PaymentRuleCatalog(IPaymentRuleCatalog iPaymentRuleCatalog)
         {
             Supplier = iPaymentRuleCatalog.Supplier;

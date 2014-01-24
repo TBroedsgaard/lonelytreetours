@@ -31,6 +31,15 @@ namespace Model.Controllers
             return (IPaymentRuleCatalog)paymentRuleCatalog;
         }
 
+        public IPaymentRuleCatalog Create(IBooking iBooking)
+        {
+            PaymentRuleCatalog paymentRuleCatalog = new PaymentRuleCatalog(iBooking);
+            paymentRuleCatalog.Deleted = true;
+            paymentRuleCatalogs.Add(paymentRuleCatalog);
+
+            return (IPaymentRuleCatalog)paymentRuleCatalog;
+        }
+
         public override IPaymentRuleCatalog Update(IPaymentRuleCatalog iPaymentRuleCatalog)
         {
             PaymentRuleCatalog oldPaymentRuleCatalog = findPaymentRuleCatalog(iPaymentRuleCatalog.Id);

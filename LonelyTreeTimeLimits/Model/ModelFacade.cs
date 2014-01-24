@@ -17,6 +17,7 @@ namespace Model
         private PaymentRuleCatalogController paymentRuleCatalogController;
         private PaymentContractController paymentContractController;
         private PaymentRuleController paymentRuleController;
+        private BookingController bookingController;
 
         public ModelFacade()
         {
@@ -26,11 +27,12 @@ namespace Model
             paymentRuleCatalogController = new PaymentRuleCatalogController(dataAccessFacade.GetPaymentRuleCatalogs());
             paymentContractController = new PaymentContractController(dataAccessFacade.GetPaymentContracts());
             paymentRuleController = new PaymentRuleController(dataAccessFacade.GetPaymentRules());
+            bookingController = new BookingController(dataAccessFacade.GetBookings());
         }
 
-        public IPaymentRuleCatalog CreatePaymentRuleCatalog()
+        public IPaymentRuleCatalog CreatePaymentRuleCatalog(IBooking iBooking)
         {
-            IPaymentRuleCatalog iPaymentRuleCatalog = paymentRuleCatalogController.Create();
+            IPaymentRuleCatalog iPaymentRuleCatalog = paymentRuleCatalogController.Create(iBooking);
             iPaymentRuleCatalog = dataAccessFacade.CreatePaymentRuleCatalog(iPaymentRuleCatalog);
             if (iPaymentRuleCatalog.Deleted == false)
             {
@@ -53,7 +55,7 @@ namespace Model
             IPaymentRuleCatalog prc = paymentRuleCatalogController.GetPaymentRuleCatalog(iBooking);
             if (prc == null)
             {
-                prc = CreatePaymentRuleCatalog();
+                prc = CreatePaymentRuleCatalog(iBooking);
             }
 
             return prc;
@@ -140,7 +142,7 @@ namespace Model
             iSale = dataAccessFacade.CreateSale(iSale);
             if (iSale.Deleted == false)
             {
-                saleController.Update(iSale); // update deleted status and set id
+                UpdateSale(iSale); // update deleted status and set id
             }
 
             return iSale;
@@ -168,6 +170,53 @@ namespace Model
         public List<ISale> GetSales()
         {
             return saleController.GetAll();
+        }
+
+        public IBooking CreateBooking(ISale sale)
+        {
+            IBooking iBooking = bookingController.Create();
+            iBooking.Sale = sale;
+            iBooking = dataAccessFacade.CreateBooking(iBooking);
+            if (iBooking.Deleted == false)
+            {
+                UpdateBooking(iBooking);
+            }
+
+            return iBooking;
+        }
+
+        private IBooking UpdateBooking(IBooking iBooking)
+        {
+            iBooking = bookingController.Update(iBooking);
+            dataAccessFacade.UpdateBooking(iBooking);
+
+            return iBooking;
+        }
+
+        public ISupplier CreateSupplier()
+        {
+            return new Supplier();
+        }
+
+        public IPaymentRule CreatePaymentRule(IPaymentRuleCatalog iPaymentRuleCatalog)
+        {
+            IPaymentRule iPaymentRule = paymentRuleController.Create();
+            iPaymentRule.PaymentRuleCatalog = iPaymentRuleCatalog;
+            iPaymentRule = dataAccessFacade.CreatePaymentRule(iPaymentRule);
+            if (iPaymentRule.Deleted == false)
+            {
+                UpdatePaymentRule(iPaymentRule);
+            }
+
+            return iPaymentRule;
+        }
+
+        public IPaymentRule UpdatePaymentRule(IPaymentRule iPaymentRule)
+        {
+            iPaymentRule = paymentRuleController.Update(iPaymentRule);
+            dataAccessFacade.UpdatePaymentRule(iPaymentRule);
+
+            return iPaymentRule;
         }
     }
 }
