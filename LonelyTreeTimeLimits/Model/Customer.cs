@@ -25,6 +25,8 @@ namespace Model
         {
             Id = iCustomer.Id;
             Deleted = iCustomer.Deleted;
+            LastUpdated = iCustomer.LastUpdated;
+
             BirthDate = iCustomer.BirthDate;
             Comment = iCustomer.Comment;
             Country = iCustomer.Country;

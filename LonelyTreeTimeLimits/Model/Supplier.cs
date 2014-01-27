@@ -24,6 +24,10 @@ namespace Model
 
         public Supplier(ISupplier iSupplier)
         {
+            Id = iSupplier.Id;
+            Deleted = iSupplier.Deleted;
+            LastUpdated = iSupplier.LastUpdated;
+
             SupplierType = iSupplier.SupplierType;
             Name = iSupplier.Name;
             ContactPerson = iSupplier.ContactPerson;
