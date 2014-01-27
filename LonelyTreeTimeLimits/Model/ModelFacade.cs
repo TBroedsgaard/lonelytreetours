@@ -123,7 +123,7 @@ namespace Model
         public bool DeleteCustomer(ICustomer iCustomer)
         {
             iCustomer = customerController.Delete(iCustomer);
-            if (dataAccessFacade.DeleteCustomer(iCustomer))
+            if (dataAccessFacade.DeleteCustomer(iCustomer).Deleted == true)
             {
                 return true;
             }
