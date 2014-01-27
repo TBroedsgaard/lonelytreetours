@@ -3,13 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="NewSaleWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="StartDate" HorizontalAlignment="Left" Margin="70,62,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="CustomerCombo" HorizontalAlignment="Left" Margin="225,66,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
-            <ListBoxItem Content="Customer"/>
-        </ComboBox>
-        <ComboBox x:Name="TypeCombo" HorizontalAlignment="Left" Margin="367,66,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
-            <ListBoxItem Content="Type"/>
-        </ComboBox>
+        <Label Content="StartDate" HorizontalAlignment="Left" Margin="44,62,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="CustomerCombo" HorizontalAlignment="Left" Margin="181,66,0,0" VerticalAlignment="Top" Width="201" SelectedIndex="0"/>
+        <ComboBox x:Name="TypeCombo" HorizontalAlignment="Left" Margin="387,66,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0"/>
         <ComboBox x:Name="NewCustomerCombo" HorizontalAlignment="Left" Margin="512,66,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
             <ListBoxItem Content="New Customer"/>
         </ComboBox>
@@ -19,7 +15,7 @@
         <Button Content="Add" HorizontalAlignment="Left" Margin="450,167,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <Button Content="Edit" HorizontalAlignment="Left" Margin="450,194,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="Delete" HorizontalAlignment="Left" Margin="450,234,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label Content="20/1/2014" HorizontalAlignment="Left" Margin="155,62,0,0" VerticalAlignment="Top" Width="65"/>
+        <Label x:Name="DateLabel" Content="20/1/2014" HorizontalAlignment="Left" Margin="111,62,0,0" VerticalAlignment="Top" Width="65" RenderTransformOrigin="-0.308,0.269"/>
         <ComboBox x:Name="StatusCombo" HorizontalAlignment="Left" Margin="512,93,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
             <ListBoxItem Content="Status"/>
         </ComboBox>

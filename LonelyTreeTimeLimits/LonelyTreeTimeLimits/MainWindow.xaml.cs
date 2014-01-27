@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Model;
+
 
 
 namespace LonelyTreeTimeLimits
@@ -20,10 +22,17 @@ namespace LonelyTreeTimeLimits
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
+    {   
+        ModelFacade Mf;
+      
         public MainWindow()
         {
  InitializeComponent();
+              Mf = new ModelFacade();
+              SalesListBox.ItemsSource = Mf.GetSales();
+
+              
+              
         }
 
         private void salesDeleteButton_Click(object sender, RoutedEventArgs e)
@@ -34,8 +43,11 @@ namespace LonelyTreeTimeLimits
 
         private void saleNewButton_Click(object sender, RoutedEventArgs e)
         {
-             NewSaleWindow NewSaleWindow = new NewSaleWindow();
-             NewSaleWindow.Show(); 
+         
+             NewSaleWindow NewSaleWindow = new NewSaleWindow(Mf);
+             NewSaleWindow.Show();
+             Mf.CreateSale();
+             SalesListBox.Items.Refresh();
 
 
         }

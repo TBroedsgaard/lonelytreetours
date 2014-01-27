@@ -20,6 +20,7 @@ namespace Model
             dataAccessFacade = new DataAccessFacade();
             customerController = new CustomerController(dataAccessFacade.GetCustomers());
             saleController = new SaleController(dataAccessFacade.GetSales());
+            
         }
 
         public ICustomer CreateCustomer()
@@ -55,7 +56,27 @@ namespace Model
 
         public List<ICustomer> GetCustomers()
         {
+             
             return customerController.GetAll();
+        }
+
+        public List<string> GetCustomerNames()
+        {
+
+            List<ICustomer> customerlist = new List<ICustomer>();
+            customerlist = GetCustomers();
+            List<string> CustomerNames = new List<string>();
+
+            foreach (ICustomer item in customerlist)
+	{
+        string Customername = item.FirstName + " " + item.LastName;
+        CustomerNames.Add(Customername);
+
+	}
+
+
+
+            return CustomerNames;
         }
 
         public ISale CreateSale()
@@ -93,5 +114,17 @@ namespace Model
         {
             return saleController.GetAll();
         }
+
+
+
+        public List<string> GetCustomerTypes()
+        {
+            return Enum.GetNames(typeof(CustomerType)).ToList();
+        }
+
+
+
+
+       
     }
 }

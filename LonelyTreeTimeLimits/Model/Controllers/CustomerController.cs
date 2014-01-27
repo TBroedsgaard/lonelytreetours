@@ -11,9 +11,27 @@ namespace Model.Controllers
     {
         private List<Customer> customers;
 
+      
         public CustomerController(List<ICustomer> iCustomers)
         {
             customers = new List<Customer>();
+
+            Customer a = new Customer();
+            a.FirstName = "james";
+            a.LastName = "hetfield";
+            customers.Add(a);
+            Customer b = new Customer();
+            b.FirstName = "rory";
+            b.LastName = "Gallager";
+            customers.Add(b);
+            Customer c = new Customer();
+            c.FirstName = "Helen";
+            c.LastName = "Smith";
+            customers.Add(c);
+            
+             
+
+            
 
             foreach (ICustomer iCustomer in iCustomers)
             {
@@ -48,7 +66,10 @@ namespace Model.Controllers
 
         public override List<ICustomer> GetAll()
         {
+      
             List<ICustomer> iCustomers = customers.Cast<ICustomer>().ToList();
+           
+
             return iCustomers;
         }
 

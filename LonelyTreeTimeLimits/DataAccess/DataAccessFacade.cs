@@ -12,43 +12,46 @@ namespace DataAccess
         public ICustomer CreateCustomer(ICustomer iCustomer)
         {
             // assign Id here - or in model?
-            throw new NotImplementedException();
+            return null;
         }
 
         public bool UpdateCustomer(ICustomer iCustomer)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public bool DeleteCustomer(ICustomer iCustomer)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public List<ICustomer> GetCustomers()
         {
             // must return empty list and not null
-            throw new NotImplementedException();
+            List<ICustomer> ICustomerList;
+            ICustomerList = new List<ICustomer>();
+            return ICustomerList;
         }
 
         public bool UpdateSale(ISale iSale)
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         public ISale CreateSale(ISale iSale)
         {
-            throw new NotImplementedException();
+            return iSale;
         }
 
         public bool DeleteSale(ISale iSale)
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         public List<ISale> GetSales()
         {
-            throw new NotImplementedException();
+            List<ISale> isales = new List<ISale>(); 
+            return isales;
         }
     }
 }
