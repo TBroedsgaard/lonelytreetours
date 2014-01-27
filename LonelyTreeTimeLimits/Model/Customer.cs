@@ -23,6 +23,8 @@ namespace Model
 
         public Customer(ICustomer iCustomer)
         {
+            Id = iCustomer.Id;
+            Deleted = iCustomer.Deleted;
             BirthDate = iCustomer.BirthDate;
             Comment = iCustomer.Comment;
             Country = iCustomer.Country;
@@ -33,10 +35,14 @@ namespace Model
             LastName = iCustomer.LastName;
             PhoneNumber = iCustomer.PhoneNumber;
             Skype = iCustomer.Skype;
-            LastUpdated = DateTime.Now;
         }
 
         public Customer()
         { }
+
+        public override string ToString()
+        {
+            return FirstName + " " + LastName;
+        }
     }
 }
