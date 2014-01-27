@@ -12,10 +12,12 @@ namespace DataAccess
     public class DataAccessFacade
     {
         CustomerController customerController;
+        SaleController saleController;
 
         public DataAccessFacade()
         { 
             customerController = new CustomerController();
+            saleController = new SaleController();
         }
 
         public ICustomer CreateCustomer(ICustomer iCustomer)
