@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinaryHelper.cs" />
+    <Compile Include="Controllers\BookingController.cs" />
+    <Compile Include="Controllers\PaymentRuleCatalogController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\SaleController.cs" />
     <Compile Include="Controllers\SupplierController.cs" />
