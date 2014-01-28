@@ -23,6 +23,10 @@ namespace Model
 
         public Booking(IBooking iBooking)
         {
+            Id = iBooking.Id;
+            Deleted = iBooking.Deleted;
+            LastUpdated = iBooking.LastUpdated;
+
             Sale = iBooking.Sale;
             Supplier = iBooking.Supplier;
             BookingType = iBooking.BookingType;

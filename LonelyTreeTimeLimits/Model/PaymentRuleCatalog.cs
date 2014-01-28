@@ -25,6 +25,10 @@ namespace Model
 
         public PaymentRuleCatalog(IPaymentRuleCatalog iPaymentRuleCatalog)
         {
+            Id = iPaymentRuleCatalog.Id;
+            Deleted = iPaymentRuleCatalog.Deleted;
+            LastUpdated = iPaymentRuleCatalog.LastUpdated;
+
             Supplier = iPaymentRuleCatalog.Supplier;
             Customer = iPaymentRuleCatalog.Customer;
             BookingType = iPaymentRuleCatalog.BookingType;

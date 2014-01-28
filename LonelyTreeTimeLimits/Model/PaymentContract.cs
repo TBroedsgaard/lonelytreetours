@@ -20,6 +20,10 @@ namespace Model
 
         public PaymentContract(IPaymentContract iPaymentContract)
         {
+            Id = iPaymentContract.Id;
+            Deleted = iPaymentContract.Deleted;
+            LastUpdated = iPaymentContract.LastUpdated;
+
             Booking = iPaymentContract.Booking;
             DueDate = iPaymentContract.DueDate;
             Amount = iPaymentContract.Amount;

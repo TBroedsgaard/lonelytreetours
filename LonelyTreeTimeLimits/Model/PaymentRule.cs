@@ -20,6 +20,10 @@ namespace Model
 
         public PaymentRule(IPaymentRule iPaymentRule)
         {
+            Id = iPaymentRule.Id;
+            Deleted = iPaymentRule.Deleted;
+            LastUpdated = iPaymentRule.LastUpdated;
+
             PaymentRuleCatalog = iPaymentRule.PaymentRuleCatalog;
             ReferenceDate = iPaymentRule.ReferenceDate;
             PaymentDate = iPaymentRule.PaymentDate;
