@@ -41,6 +41,9 @@
   <ItemGroup>
     <Compile Include="BinaryHelper.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\PaymentContractController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Controllers\PaymentRuleController.cs" />
     <Compile Include="Controllers\SaleController.cs" />
     <Compile Include="DataAccessFacade.cs" />
     <Compile Include="Controllers\DataController.cs" />
