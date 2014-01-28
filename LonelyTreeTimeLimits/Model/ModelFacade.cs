@@ -48,7 +48,7 @@ namespace Model
             iCustomer = customerController.Delete(iCustomer);
             if (dataAccessFacade.DeleteCustomer(iCustomer))
             {
-                return true;
+                return false;
             }
 
             return false;

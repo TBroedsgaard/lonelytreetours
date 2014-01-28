@@ -53,5 +53,15 @@ namespace DataAccess
             List<ISale> isales = new List<ISale>(); 
             return isales;
         }
+
+        public bool savecustomer()
+        {
+
+
+            return true;
+        }
+
+
+
     }
 }

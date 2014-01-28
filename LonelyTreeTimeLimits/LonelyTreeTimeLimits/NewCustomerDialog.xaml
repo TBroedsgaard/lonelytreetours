@@ -16,7 +16,7 @@
         <RadioButton Content="Female" HorizontalAlignment="Left" Margin="98,111,0,0" VerticalAlignment="Top"/>
         <DatePicker HorizontalAlignment="Left" Margin="33,132,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="172,111,0,0" TextWrapping="Wrap" Text="Phone" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="172,139,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="172,139,0,0" TextWrapping="Wrap" Text="skype name" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="215" Margin="33,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
         <Label Content="Kommentar" HorizontalAlignment="Left" Margin="33,201,0,0" VerticalAlignment="Top"/>
 

@@ -1,7 +1,7 @@
 ﻿<Window x:Class="LonelyTreeTimeLimits.NewSaleWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="NewSaleWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+        Title="NewSaleWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     <Grid>
         <Label Content="StartDate" HorizontalAlignment="Left" Margin="44,62,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="CustomerCombo" HorizontalAlignment="Left" Margin="181,66,0,0" VerticalAlignment="Top" Width="201" SelectedIndex="0"/>

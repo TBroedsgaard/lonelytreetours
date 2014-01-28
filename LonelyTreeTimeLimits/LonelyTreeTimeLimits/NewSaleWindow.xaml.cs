@@ -46,5 +46,10 @@ namespace LonelyTreeTimeLimits
             BookingsWindow bk = new BookingsWindow();
             bk.Show();
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+           
+        }
     }
 }
