@@ -8,17 +8,14 @@ using Interfaces;
 
 namespace DataAccess.Controllers
 {
-    internal class CustomerController
+    internal class CustomerController : DataController<CustomerEntity>
     {
-        private List<CustomerEntity> customers;
-        private BinaryHelper<CustomerEntity> binaryHelper;
         private const string FILENAME = "customers.bin";
-        private int nextId;
 
         public CustomerController()
         {
             binaryHelper = new BinaryHelper<CustomerEntity>();
-            customers = binaryHelper.Load(FILENAME);
+            entities = binaryHelper.Load(FILENAME);
             setNextId();
         }
 
@@ -28,11 +25,11 @@ namespace DataAccess.Controllers
             ic.LastUpdated = DateTime.Now;
             ic.Deleted = false;
             CustomerEntity ce = new CustomerEntity(ic);
-            customers.Add(ce);
+            entities.Add(ce);
 
             try
             {
-                binaryHelper.Save(FILENAME, customers);
+                binaryHelper.Save(FILENAME, entities);
             }
             catch
             {
@@ -45,7 +42,7 @@ namespace DataAccess.Controllers
 
         internal List<ICustomer> GetAll()
         {
-            return customers.Cast<ICustomer>().ToList();
+            return entities.Cast<ICustomer>().ToList();
         }
 
         internal ICustomer Update(ICustomer ic)
@@ -54,10 +51,10 @@ namespace DataAccess.Controllers
             ic.LastUpdated = DateTime.Now;
             CustomerEntity newCe = new CustomerEntity(ic);
 
-            customers.Remove(oldCe);
-            customers.Add(newCe);
+            entities.Remove(oldCe);
+            entities.Add(newCe);
 
-            binaryHelper.Save(FILENAME, customers);
+            binaryHelper.Save(FILENAME, entities);
 
             return (ICustomer)newCe;
         }
@@ -70,7 +67,7 @@ namespace DataAccess.Controllers
 
         private CustomerEntity find(ICustomer ic)
         {
-            foreach (CustomerEntity ce in customers)
+            foreach (CustomerEntity ce in entities)
             { 
                 if (ce.Id == ic.Id)
                 {
@@ -79,26 +76,6 @@ namespace DataAccess.Controllers
             }
 
             return null;
-        }
-
-        private int? getNextId()
-        {
-            return nextId++;
-        }
-
-        private void setNextId()
-        {
-            int maxId = 1;
-
-            foreach (CustomerEntity ce in customers)
-            {
-                if (ce.Id != null && ce.Id > maxId)
-                {
-                    maxId = (int)ce.Id;
-                }
-            }
-
-            nextId = maxId;
         }
     }
 }

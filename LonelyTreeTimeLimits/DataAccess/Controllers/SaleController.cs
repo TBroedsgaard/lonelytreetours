@@ -8,17 +8,14 @@ using Interfaces;
 
 namespace DataAccess.Controllers
 {
-    internal class SaleController
+    internal class SaleController : DataController<SaleEntity>
     {
-        private List<SaleEntity> sales;
-        private BinaryHelper<SaleEntity> binaryHelper;
         private const string FILENAME = "sales.bin";
-        private int nextId;
 
         public SaleController()
         {
             binaryHelper = new BinaryHelper<SaleEntity>();
-            sales = binaryHelper.Load(FILENAME);
+            entities = binaryHelper.Load(FILENAME);
             setNextId();
         }
 
@@ -28,11 +25,11 @@ namespace DataAccess.Controllers
             isa.LastUpdated = DateTime.Now;
             isa.Deleted = false;
             SaleEntity se = new SaleEntity(isa);
-            sales.Add(se);
+            entities.Add(se);
 
             try
             {
-                binaryHelper.Save(FILENAME, sales);
+                binaryHelper.Save(FILENAME, entities);
             }
             catch
             {
@@ -44,7 +41,7 @@ namespace DataAccess.Controllers
 
         internal List<ISale> GetAll()
         {
-            return sales.Cast<ISale>().ToList();
+            return entities.Cast<ISale>().ToList();
         }
 
         internal ISale Update(ISale isa)
@@ -53,10 +50,10 @@ namespace DataAccess.Controllers
             isa.LastUpdated = DateTime.Now;
             SaleEntity newSe = new SaleEntity(isa);
 
-            sales.Remove(oldSe);
-            sales.Add(newSe);
+            entities.Remove(oldSe);
+            entities.Add(newSe);
 
-            binaryHelper.Save(FILENAME, sales);
+            binaryHelper.Save(FILENAME, entities);
 
             return (ISale)newSe;
         }
@@ -69,7 +66,7 @@ namespace DataAccess.Controllers
 
         private SaleEntity find(ISale isa)
         {
-            foreach (SaleEntity se in sales)
+            foreach (SaleEntity se in entities)
             {
                 if (se.Id == isa.Id)
                 {
@@ -78,26 +75,6 @@ namespace DataAccess.Controllers
             }
 
             return null;
-        }
-
-        private int? getNextId()
-        {
-            return nextId++;
-        }
-
-        private void setNextId()
-        {
-            int maxId = 1;
-
-            foreach (SaleEntity se in sales)
-            {
-                if (se.Id != null && se.Id > maxId)
-                {
-                    maxId = (int)se.Id;
-                }
-            }
-
-            nextId = maxId;
         }
     }
 }
