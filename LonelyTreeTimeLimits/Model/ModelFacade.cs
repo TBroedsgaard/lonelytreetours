@@ -159,7 +159,7 @@ namespace Model
         public bool DeleteSale(ISale iSale)
         {
             iSale = saleController.Delete(iSale);
-            if (dataAccessFacade.DeleteSale(iSale))
+            if (dataAccessFacade.DeleteSale(iSale).Deleted == true)
             {
                 return true;
             }
