@@ -7,6 +7,7 @@ using Interfaces;
 
 namespace DataAccess.Entities
 {
+    [Serializable]
     internal class SaleEntity : EntityEntity, ISale
     {
         public SaleStatus SaleStatus { get; set; }
