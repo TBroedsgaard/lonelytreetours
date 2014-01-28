@@ -35,6 +35,7 @@ namespace DataAccess
             }
             catch
             {
+                Console.WriteLine("Error loading " + filename);
                 //throw;
             }
 
