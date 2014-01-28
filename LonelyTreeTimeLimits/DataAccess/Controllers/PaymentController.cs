@@ -7,7 +7,7 @@ using DataAccess.Entities;
 using Interfaces;
 namespace DataAccess.Controllers
 {
-    class PaymentController: DataController<PaymentEntity>
+    internal class PaymentController: DataController<PaymentEntity>
     {
         private const string FileName = "Payments.bin"; 
 
