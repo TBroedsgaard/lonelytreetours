@@ -48,25 +48,29 @@ namespace DataAccess
 
         public ISale CreateSale(ISale iSale)
         {
-            iSale.Deleted = false;
+            iSale = saleController.Create(iSale);
+
             return iSale;
-            //throw new NotImplementedException();
         }
 
         public ISale UpdateSale(ISale iSale)
         {
+            iSale = saleController.Update(iSale);
+
             return iSale;
         }
 
 
-        public bool DeleteSale(ISale iSale)
+        public ISale DeleteSale(ISale iSale)
         {
-            throw new NotImplementedException();
+            iSale = saleController.Delete(iSale);
+
+            return iSale;
         }
 
         public List<ISale> GetSales()
         {
-            return new List<ISale>();
+            return saleController.GetAll();
         }
 
         public IPaymentRuleCatalog CreatePaymentRuleCatalog(IPaymentRuleCatalog iPaymentRuleCatalog)
