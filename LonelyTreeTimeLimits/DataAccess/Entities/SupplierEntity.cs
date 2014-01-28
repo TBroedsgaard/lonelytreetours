@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Interfaces;
 
-namespace Model
+namespace DataAccess.Entities
 {
-    internal class Supplier : Entity, ISupplier
+    [Serializable]
+    internal class SupplierEntity : EntityEntity, ISupplier
     {
         public SupplierType SupplierType { get; set; }
         public string Name { get; set; }
@@ -19,10 +20,10 @@ namespace Model
         public string Comment { get; set; }
         public string Website { get; set; }
 
-        public Supplier()
+        public SupplierEntity()
         { }
 
-        public Supplier(ISupplier iSupplier)
+        public SupplierEntity(ISupplier iSupplier)
         {
             Id = iSupplier.Id;
             Deleted = iSupplier.Deleted;

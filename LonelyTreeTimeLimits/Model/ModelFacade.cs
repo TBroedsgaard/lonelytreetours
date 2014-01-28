@@ -123,7 +123,7 @@ namespace Model
         public bool DeleteCustomer(ICustomer iCustomer)
         {
             iCustomer = customerController.Delete(iCustomer);
-            if (dataAccessFacade.DeleteCustomer(iCustomer))
+            if (dataAccessFacade.DeleteCustomer(iCustomer).Deleted == true)
             {
                 return true;
             }
@@ -159,7 +159,7 @@ namespace Model
         public bool DeleteSale(ISale iSale)
         {
             iSale = saleController.Delete(iSale);
-            if (dataAccessFacade.DeleteSale(iSale))
+            if (dataAccessFacade.DeleteSale(iSale).Deleted == true)
             {
                 return true;
             }

@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Interfaces;
 
-namespace Model
+namespace DataAccess.Entities
 {
-    internal class PaymentRule : Entity, IPaymentRule
+    [Serializable]
+    internal class PaymentRuleEntity : EntityEntity, IPaymentRule
     {
         public IPaymentRuleCatalog PaymentRuleCatalog { get; set; }
         public ReferenceDate ReferenceDate { get; set; }
@@ -15,10 +16,10 @@ namespace Model
         public decimal Percentage { get; set; }
         public string Description { get; set; }
 
-        public PaymentRule()
+        public PaymentRuleEntity()
         { }
 
-        public PaymentRule(IPaymentRule iPaymentRule)
+        public PaymentRuleEntity(IPaymentRule iPaymentRule)
         {
             Id = iPaymentRule.Id;
             Deleted = iPaymentRule.Deleted;

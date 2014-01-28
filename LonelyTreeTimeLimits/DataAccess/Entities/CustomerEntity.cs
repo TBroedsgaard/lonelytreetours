@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Interfaces;
 
-namespace Model
+namespace DataAccess.Entities
 {
-    internal class Customer : Entity, ICustomer
+    [Serializable]
+    internal class CustomerEntity : EntityEntity, ICustomer 
     {
         public CustomerType CustomerType { get; set; }
         public string FirstName { get; set; }
@@ -21,7 +22,7 @@ namespace Model
         public string Comment { get; set; }
         public DateTime CreatedDate { get; set; }
 
-        public Customer(ICustomer iCustomer)
+        public CustomerEntity(ICustomer iCustomer)
         {
             Id = iCustomer.Id;
             Deleted = iCustomer.Deleted;
@@ -37,14 +38,6 @@ namespace Model
             LastName = iCustomer.LastName;
             PhoneNumber = iCustomer.PhoneNumber;
             Skype = iCustomer.Skype;
-        }
-
-        public Customer()
-        { }
-
-        public override string ToString()
-        {
-            return FirstName + " " + LastName;
         }
     }
 }

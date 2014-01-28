@@ -4,56 +4,73 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Interfaces;
+using DataAccess.Entities;
+using DataAccess.Controllers;
 
 namespace DataAccess
 {
     public class DataAccessFacade
     {
+        CustomerController customerController;
+        SaleController saleController;
+
+        public DataAccessFacade()
+        { 
+            customerController = new CustomerController();
+            saleController = new SaleController();
+        }
+
         public ICustomer CreateCustomer(ICustomer iCustomer)
         {
-            // assign Id here - or in model?
-            iCustomer.Deleted = false;
+            iCustomer = customerController.Create(iCustomer);
+
             return iCustomer;
         }
 
-        public bool UpdateCustomer(ICustomer iCustomer)
+        public ICustomer UpdateCustomer(ICustomer iCustomer)
         {
-            return true;
+            iCustomer = customerController.Update(iCustomer);
+
+            return iCustomer;
         }
 
-        public bool DeleteCustomer(ICustomer iCustomer)
+        public ICustomer DeleteCustomer(ICustomer iCustomer)
         {
-            throw new NotImplementedException();
+            iCustomer = customerController.Delete(iCustomer);
+
+            return iCustomer;
         }
 
         public List<ICustomer> GetCustomers()
         {
-            // must return empty list and not null
-            //throw new NotImplementedException();
-            List<ICustomer> iCustomers = new List<ICustomer>();
-            return iCustomers;
-        }
-
-        public bool UpdateSale(ISale iSale)
-        {
-            return true;
+            return customerController.GetAll();
         }
 
         public ISale CreateSale(ISale iSale)
         {
-            iSale.Deleted = false;
+            iSale = saleController.Create(iSale);
+
             return iSale;
-            //throw new NotImplementedException();
         }
 
-        public bool DeleteSale(ISale iSale)
+        public ISale UpdateSale(ISale iSale)
         {
-            throw new NotImplementedException();
+            iSale = saleController.Update(iSale);
+
+            return iSale;
+        }
+
+
+        public ISale DeleteSale(ISale iSale)
+        {
+            iSale = saleController.Delete(iSale);
+
+            return iSale;
         }
 
         public List<ISale> GetSales()
         {
-            return new List<ISale>();
+            return saleController.GetAll();
         }
 
         public IPaymentRuleCatalog CreatePaymentRuleCatalog(IPaymentRuleCatalog iPaymentRuleCatalog)
@@ -69,6 +86,7 @@ namespace DataAccess
 
         public IPaymentContract CreatePaymentContract(IPaymentContract iPaymentContract)
         {
+            // TODO: REMEMBER TO OVERWRITE ID, DELETED AND LAST UPDATED WHEN BUILDING FROM INTERFACE
             iPaymentContract.Deleted = false;
             return iPaymentContract;
         }
