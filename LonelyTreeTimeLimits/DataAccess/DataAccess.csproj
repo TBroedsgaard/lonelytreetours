@@ -44,9 +44,15 @@
     <Compile Include="Controllers\SaleController.cs" />
     <Compile Include="DataAccessFacade.cs" />
     <Compile Include="DataController.cs" />
+    <Compile Include="Entities\BookingEntity.cs" />
     <Compile Include="Entities\CustomerEntity.cs" />
     <Compile Include="Entities\EntityEntity.cs" />
+    <Compile Include="Entities\PaymentContractEntity.cs" />
+    <Compile Include="Entities\PaymentEntity.cs" />
+    <Compile Include="Entities\PaymentRuleCatalogEntity.cs" />
+    <Compile Include="Entities\PaymentRuleEntity.cs" />
     <Compile Include="Entities\SaleEntity.cs" />
+    <Compile Include="Entities\SupplierEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

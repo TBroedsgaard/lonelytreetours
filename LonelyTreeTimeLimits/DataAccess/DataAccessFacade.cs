@@ -86,6 +86,7 @@ namespace DataAccess
 
         public IPaymentContract CreatePaymentContract(IPaymentContract iPaymentContract)
         {
+            // TODO: REMEMBER TO OVERWRITE ID, DELETED AND LAST UPDATED WHEN BUILDING FROM INTERFACE
             iPaymentContract.Deleted = false;
             return iPaymentContract;
         }
