@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Interfaces;
 
-namespace Model
+namespace DataAccess.Entities
 {
-    internal class Booking : Entity, IBooking
+    [Serializable]
+    internal class BookingEntity : EntityEntity, IBooking
     {
         public ISale Sale { get; set; }
         public ISupplier Supplier { get; set; }
@@ -18,10 +19,10 @@ namespace Model
         public string Valuta { get; set; }
         public string Notes { get; set; }
 
-        public Booking()
+        public BookingEntity()
         { }
 
-        public Booking(IBooking iBooking)
+        public BookingEntity(IBooking iBooking)
         {
             Id = iBooking.Id;
             Deleted = iBooking.Deleted;
@@ -35,11 +36,6 @@ namespace Model
             TotalAmount = iBooking.TotalAmount;
             Valuta = iBooking.Valuta;
             Notes = iBooking.Notes;
-        }
-
-        public Booking(ISale iSale)
-        {
-            Sale = iSale;
         }
     }
 }

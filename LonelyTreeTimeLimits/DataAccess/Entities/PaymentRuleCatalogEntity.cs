@@ -5,25 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using Interfaces;
 
-namespace Model
+namespace DataAccess.Entities
 {
-    internal class PaymentRuleCatalog : Entity, IPaymentRuleCatalog
+    [Serializable]
+    internal class PaymentRuleCatalogEntity : EntityEntity, IPaymentRuleCatalog
     {
         public ISupplier Supplier { get; set; }
         public ICustomer Customer { get; set; }
         public BookingType BookingType { get; set; }
 
-        public PaymentRuleCatalog()
+        public PaymentRuleCatalogEntity()
         { }
 
-        public PaymentRuleCatalog(IBooking iBooking)
-        {
-            Supplier = iBooking.Supplier;
-            Customer = iBooking.Sale.Customer;
-            BookingType = iBooking.BookingType;
-        }
-
-        public PaymentRuleCatalog(IPaymentRuleCatalog iPaymentRuleCatalog)
+        public PaymentRuleCatalogEntity(IPaymentRuleCatalog iPaymentRuleCatalog)
         {
             Id = iPaymentRuleCatalog.Id;
             Deleted = iPaymentRuleCatalog.Deleted;
@@ -33,5 +27,6 @@ namespace Model
             Customer = iPaymentRuleCatalog.Customer;
             BookingType = iPaymentRuleCatalog.BookingType;
         }
+
     }
 }

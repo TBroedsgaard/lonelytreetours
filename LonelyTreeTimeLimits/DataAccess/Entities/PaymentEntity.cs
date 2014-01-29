@@ -5,19 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using Interfaces;
 
-namespace Model
+namespace DataAccess.Entities
 {
-    internal class Payment : Entity, IPayment
+    [Serializable]
+    internal class PaymentEntity : EntityEntity, IPayment
     {
         public IPaymentContract PaymentContract { get; set; }
         public DateTime PaymentDate { get; set; }
         public decimal PayedAmount { get; set; }
         public string PaymentReceipt { get; set; }
 
-        public Payment()
+        public PaymentEntity()
         { }
 
-        public Payment(IPayment iPayment)
+        public PaymentEntity(IPayment iPayment)
         {
             Id = iPayment.Id;
             Deleted = iPayment.Deleted;

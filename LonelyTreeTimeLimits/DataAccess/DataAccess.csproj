@@ -39,7 +39,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinaryHelper.cs" />
+    <Compile Include="Controllers\BookingController.cs" />
+    <Compile Include="Controllers\PaymentRuleCatalogController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\PaymentContractController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Controllers\PaymentRuleController.cs" />
+    <Compile Include="Controllers\SaleController.cs" />
+    <Compile Include="Controllers\SupplierController.cs" />
     <Compile Include="DataAccessFacade.cs" />
+    <Compile Include="Controllers\DataController.cs" />
+    <Compile Include="Entities\BookingEntity.cs" />
+    <Compile Include="Entities\CustomerEntity.cs" />
+    <Compile Include="Entities\EntityEntity.cs" />
+    <Compile Include="Entities\PaymentContractEntity.cs" />
+    <Compile Include="Entities\PaymentEntity.cs" />
+    <Compile Include="Entities\PaymentRuleCatalogEntity.cs" />
+    <Compile Include="Entities\PaymentRuleEntity.cs" />
+    <Compile Include="Entities\SaleEntity.cs" />
+    <Compile Include="Entities\SupplierEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

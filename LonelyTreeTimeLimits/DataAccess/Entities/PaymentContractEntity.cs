@@ -5,20 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 using Interfaces;
 
-namespace Model
+namespace DataAccess.Entities
 {
-    internal class PaymentContract : Entity, IPaymentContract
+    [Serializable]
+    internal class PaymentContractEntity : EntityEntity, IPaymentContract
     {
+
         public IBooking Booking { get; set; }
         public DateTime DueDate { get; set; }
         public decimal Amount { get; set; }
         public string Valuta { get; set; }
         public string Invoice { get; set; }
 
-        public PaymentContract()
+        public PaymentContractEntity()
         { }
 
-        public PaymentContract(IPaymentContract iPaymentContract)
+        public PaymentContractEntity(IPaymentContract iPaymentContract)
         {
             Id = iPaymentContract.Id;
             Deleted = iPaymentContract.Deleted;
@@ -29,23 +31,6 @@ namespace Model
             Amount = iPaymentContract.Amount;
             Valuta = iPaymentContract.Valuta;
             Invoice = iPaymentContract.Invoice;
-        }
-
-        public PaymentContract(IBooking iBooking, IPaymentRule iPaymentRule)
-        {
-            Booking = iBooking;
-
-            if (iPaymentRule.ReferenceDate == ReferenceDate.BookingEndDate)
-            {
-                DueDate = iBooking.EndDate.AddDays(iPaymentRule.PaymentDate);
-            }
-            else 
-            {
-                DueDate = iBooking.StartDate.AddDays(iPaymentRule.PaymentDate);
-            }
-
-            Amount = iBooking.TotalAmount * iPaymentRule.Percentage;
-            Valuta = iBooking.Valuta;
         }
     }
 }
