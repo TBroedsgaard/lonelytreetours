@@ -33,6 +33,7 @@ namespace DataAccess.Controllers
              catch
              {
                  ipa.Deleted = true;
+                 pe.Deleted = true;
                  throw;
              }
 

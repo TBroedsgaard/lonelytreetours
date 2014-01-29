@@ -34,6 +34,7 @@ namespace DataAccess.Controllers
             catch
             {
                 isu.Deleted = true;
+                sue.Deleted = true;
                 throw;
             }
 

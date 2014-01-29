@@ -34,6 +34,7 @@ namespace DataAccess.Controllers
             catch
             {
                 iprc.Deleted = true;
+                prce.Deleted = true;
                 throw;
             }
 
