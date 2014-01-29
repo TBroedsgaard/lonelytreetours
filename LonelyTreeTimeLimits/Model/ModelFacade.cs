@@ -18,6 +18,7 @@ namespace Model
         private PaymentContractController paymentContractController;
         private PaymentRuleController paymentRuleController;
         private BookingController bookingController;
+        private SupplierController supplierController;
 
         public ModelFacade()
         {
@@ -28,6 +29,7 @@ namespace Model
             paymentContractController = new PaymentContractController(dataAccessFacade.GetPaymentContracts());
             paymentRuleController = new PaymentRuleController(dataAccessFacade.GetPaymentRules());
             bookingController = new BookingController(dataAccessFacade.GetBookings());
+            supplierController = new SupplierController(dataAccessFacade.GetSuppliers());
         }
 
         public IPaymentRuleCatalog CreatePaymentRuleCatalog(IBooking iBooking)
@@ -172,10 +174,9 @@ namespace Model
             return saleController.GetAll();
         }
 
-        public IBooking CreateBooking(ISale sale)
+        public IBooking CreateBooking(ISale iSale)
         {
-            IBooking iBooking = bookingController.Create(); // TODO: This needs to be fixed to be just like CreatePaymentRuleCatalog 
-            iBooking.Sale = sale;
+            IBooking iBooking = bookingController.Create(iSale); 
             iBooking = dataAccessFacade.CreateBooking(iBooking);
             if (iBooking.Deleted == false)
             {
@@ -195,13 +196,27 @@ namespace Model
 
         public ISupplier CreateSupplier()
         {
-            return new Supplier(); // TODO: this needs to be implemented
+            ISupplier iSupplier = supplierController.Create();
+            iSupplier = dataAccessFacade.CreateSupplier(iSupplier);
+            if (iSupplier.Deleted == false)
+            {
+                UpdateSupplier(iSupplier);
+            }
+
+            return iSupplier;
+        }
+
+        public ISupplier UpdateSupplier(ISupplier iSupplier)
+        {
+            iSupplier = supplierController.Update(iSupplier);
+            dataAccessFacade.UpdateSupplier(iSupplier);
+
+            return iSupplier;
         }
 
         public IPaymentRule CreatePaymentRule(IPaymentRuleCatalog iPaymentRuleCatalog)
         {
-            IPaymentRule iPaymentRule = paymentRuleController.Create(); // TODO: This needs to be fixed to be just like CreatePaymentRuleCatalog 
-            iPaymentRule.PaymentRuleCatalog = iPaymentRuleCatalog;
+            IPaymentRule iPaymentRule = paymentRuleController.Create(iPaymentRuleCatalog); // TODO: This needs to be fixed to be just like CreatePaymentRuleCatalog 
             iPaymentRule = dataAccessFacade.CreatePaymentRule(iPaymentRule);
             if (iPaymentRule.Deleted == false)
             {
