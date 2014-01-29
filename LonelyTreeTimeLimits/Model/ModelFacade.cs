@@ -125,7 +125,7 @@ namespace Model
             iCustomer = customerController.Delete(iCustomer);
             if (dataAccessFacade.DeleteCustomer(iCustomer).Deleted == true)
             {
-                return true;
+                return false;
             }
 
             return false;
@@ -133,7 +133,24 @@ namespace Model
 
         public List<ICustomer> GetCustomers()
         {
+             
             return customerController.GetAll();
+        }
+
+        public List<string> GetCustomerNames()
+        {
+
+            List<ICustomer> customerlist = new List<ICustomer>();
+            customerlist = GetCustomers();
+            List<string> CustomerNames = new List<string>();
+
+            foreach (ICustomer item in customerlist)
+	        {
+                string Customername = item.FirstName + " " + item.LastName;
+                CustomerNames.Add(Customername);
+	        }
+
+            return CustomerNames;
         }
 
         public ISale CreateSale()
@@ -217,6 +234,11 @@ namespace Model
             dataAccessFacade.UpdatePaymentRule(iPaymentRule);
 
             return iPaymentRule;
+        }
+
+        public List<string> GetCustomerTypes()
+        {
+            return Enum.GetNames(typeof(CustomerType)).ToList();
         }
     }
 }

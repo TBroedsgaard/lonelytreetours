@@ -137,5 +137,13 @@ namespace DataAccess
         {
             return true;
         }
+
+        public bool savecustomer()
+        {
+            return true;
+        }
+
+
+
     }
 }

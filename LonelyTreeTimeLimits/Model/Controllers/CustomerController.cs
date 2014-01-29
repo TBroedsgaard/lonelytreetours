@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Interfaces;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Model.Controllers
 {
@@ -11,9 +13,18 @@ namespace Model.Controllers
     {
         private List<Customer> customers;
 
+     
         public CustomerController(List<ICustomer> iCustomers)
         {
             customers = new List<Customer>();
+
+            //Customer a = new Customer();
+            //a.FirstName = "james";
+            //a.LastName = "hetfield";
+            //customers.Add(a);
+     
+
+            
 
             foreach (ICustomer iCustomer in iCustomers)
             {
@@ -27,7 +38,8 @@ namespace Model.Controllers
             Customer customer = new Customer();
             customer.Deleted = true;
             customers.Add(customer);
-
+            
+            
             return (ICustomer)customer;
         }
 
@@ -48,7 +60,10 @@ namespace Model.Controllers
 
         public override List<ICustomer> GetAll()
         {
+      
             List<ICustomer> iCustomers = customers.Cast<ICustomer>().ToList();
+           
+
             return iCustomers;
         }
 
@@ -68,6 +83,28 @@ namespace Model.Controllers
             }
 
             return null;
+        }
+
+        public void savecustomer(List<Customer> customers)
+        {
+            try
+            {
+                using (Stream stream = File.Open("data.bin", FileMode.OpenOrCreate))
+                {
+
+                    BinaryFormatter bin = new BinaryFormatter();
+                    bin.Serialize(stream, customers );
+                    
+                }
+            }
+            catch (IOException)
+            {
+                
+                throw;
+            }
+           
+
+            
         }
     }
 }
