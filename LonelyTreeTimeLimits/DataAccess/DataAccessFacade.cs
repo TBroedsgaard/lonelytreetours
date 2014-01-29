@@ -87,6 +87,7 @@ namespace DataAccess
         public IPaymentContract CreatePaymentContract(IPaymentContract iPaymentContract)
         {
             // TODO: REMEMBER TO OVERWRITE ID, DELETED AND LAST UPDATED WHEN BUILDING FROM INTERFACE
+            // No, this is not an issue. I thought this was the ModelFacade. Just handle it with a controller as usual and move along :)
             iPaymentContract.Deleted = false;
             return iPaymentContract;
         }

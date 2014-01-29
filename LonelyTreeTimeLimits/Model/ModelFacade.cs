@@ -174,7 +174,7 @@ namespace Model
 
         public IBooking CreateBooking(ISale sale)
         {
-            IBooking iBooking = bookingController.Create();
+            IBooking iBooking = bookingController.Create(); // TODO: This needs to be fixed to be just like CreatePaymentRuleCatalog 
             iBooking.Sale = sale;
             iBooking = dataAccessFacade.CreateBooking(iBooking);
             if (iBooking.Deleted == false)
@@ -195,12 +195,12 @@ namespace Model
 
         public ISupplier CreateSupplier()
         {
-            return new Supplier();
+            return new Supplier(); // TODO: this needs to be implemented
         }
 
         public IPaymentRule CreatePaymentRule(IPaymentRuleCatalog iPaymentRuleCatalog)
         {
-            IPaymentRule iPaymentRule = paymentRuleController.Create();
+            IPaymentRule iPaymentRule = paymentRuleController.Create(); // TODO: This needs to be fixed to be just like CreatePaymentRuleCatalog 
             iPaymentRule.PaymentRuleCatalog = iPaymentRuleCatalog;
             iPaymentRule = dataAccessFacade.CreatePaymentRule(iPaymentRule);
             if (iPaymentRule.Deleted == false)

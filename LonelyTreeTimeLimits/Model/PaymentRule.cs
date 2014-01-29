@@ -11,6 +11,7 @@ namespace Model
     {
         public IPaymentRuleCatalog PaymentRuleCatalog { get; set; }
         public ReferenceDate ReferenceDate { get; set; }
+        // PaymentDate should probably be called "PaymentDaysOffset" as it is the number of days payment is offset from the ReferenceDate
         public int PaymentDate { get; set; }
         public decimal Percentage { get; set; }
         public string Description { get; set; }
