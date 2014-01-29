@@ -241,5 +241,9 @@ namespace DataAccess
             return supplierController.GetAll();
         }
 
+        public bool savecustomer()
+        {
+            return true;
+        }
     }
 }
