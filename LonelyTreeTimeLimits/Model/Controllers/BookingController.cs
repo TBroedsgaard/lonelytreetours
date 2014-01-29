@@ -31,6 +31,15 @@ namespace Model.Controllers
             return (IBooking)booking;
         }
 
+        public IBooking Create(ISale sale)
+        {
+            Booking booking = new Booking(sale);
+            booking.Deleted = true;
+            bookings.Add(booking);
+
+            return (IBooking)booking;
+        }
+
         public override IBooking Update(IBooking iBooking)
         {
             Booking oldBooking = findBooking(iBooking.Id);

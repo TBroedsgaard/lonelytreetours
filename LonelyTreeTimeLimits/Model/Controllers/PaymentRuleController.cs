@@ -31,6 +31,15 @@ namespace Model.Controllers
             return (IPaymentRule)paymentRule;
         }
 
+        internal IPaymentRule Create(IPaymentRuleCatalog iPaymentRuleCatalog)
+        {
+            PaymentRule paymentRule = new PaymentRule(iPaymentRuleCatalog);
+            paymentRule.Deleted = true;
+            paymentRules.Add(paymentRule);
+
+            return (IPaymentRule)paymentRule;
+        }
+
         public override IPaymentRule Update(IPaymentRule iPaymentRule)
         {
             PaymentRule oldPaymentRule = findPaymentRule(iPaymentRule.Id);

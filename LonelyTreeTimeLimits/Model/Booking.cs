@@ -36,5 +36,10 @@ namespace Model
             Valuta = iBooking.Valuta;
             Notes = iBooking.Notes;
         }
+
+        public Booking(ISale iSale)
+        {
+            Sale = iSale;
+        }
     }
 }

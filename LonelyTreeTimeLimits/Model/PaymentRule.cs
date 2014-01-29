@@ -31,5 +31,10 @@ namespace Model
             Percentage = iPaymentRule.Percentage;
             Description = iPaymentRule.Description;
         }
+
+        public PaymentRule(IPaymentRuleCatalog iPaymentRuleCatalog)
+        {
+            PaymentRuleCatalog = iPaymentRuleCatalog;
+        }
     }
 }
