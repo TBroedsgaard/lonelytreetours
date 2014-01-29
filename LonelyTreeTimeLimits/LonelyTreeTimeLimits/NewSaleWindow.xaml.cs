@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Model;
+using Interfaces;
 namespace LonelyTreeTimeLimits
 {
     /// <summary>
@@ -19,10 +20,12 @@ namespace LonelyTreeTimeLimits
     /// </summary>
     public partial class NewSaleWindow : Window
     {
-        public NewSaleWindow(ModelFacade mf)
+        ModelFacade mf;
+        public NewSaleWindow(ModelFacade modfac)
         {
             InitializeComponent();
-            ModelFacade modelFacade = mf;
+            mf = new ModelFacade();
+            mf = modfac; 
             DateLabel.Content = DateTime.Now;
 
 
@@ -37,7 +40,7 @@ namespace LonelyTreeTimeLimits
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NewCustomerDialog customerDialog = new NewCustomerDialog();
+            NewCustomerDialog customerDialog = new NewCustomerDialog(mf);
             customerDialog.Show();
         }
 

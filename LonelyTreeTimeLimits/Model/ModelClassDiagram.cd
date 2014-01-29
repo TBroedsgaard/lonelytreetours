@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Model.Booking" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABgAIAAAAAQAIAAAAAAAAAgAAAAAAAAAAAAAEAAIAA=</HashCode>
+      <FileName>Booking.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Model.Customer" Collapsed="true">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAEAEACAAAACEAAAAQAwAAAIAAAAAAgAAAAAAAAg=</HashCode>
+      <FileName>Customer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Model.Entity" Collapsed="true">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAEAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Model.ModelFacade" Collapsed="true">
+    <Position X="18.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>REgAAABQAQABQYAAJAAQALAAAwAAYABAgEIAhGQBAAA=</HashCode>
+      <FileName>ModelFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.Payment" Collapsed="true">
+    <Position X="14" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAQAAAAAAAAAAAAQACAAAAAAAA=</HashCode>
+      <FileName>Payment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Model.PaymentContract" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAACAAAAAAAACAAABAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>PaymentContract.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Model.PaymentRule" Collapsed="true">
+    <Position X="7.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEgAAAAAAAAAAAAAAgAAAgAAAAAAABAAAA=</HashCode>
+      <FileName>PaymentRule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Model.PaymentRuleCatalog" Collapsed="true">
+    <Position X="9.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>PaymentRuleCatalog.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Model.Sale" Collapsed="true">
+    <Position X="11.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAABAAAAAAAAAAAAQgAAAAAAAAA=</HashCode>
+      <FileName>Sale.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Model.Supplier" Collapsed="true">
+    <Position X="16.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAEACAAgAAABAAAQAwAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Supplier.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Model.Controllers.BookingController" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAIAAAAAAAAQAAAEAAAgAAAAAAAAA=</HashCode>
+      <FileName>Controllers\BookingController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.Controllers.CustomerController" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAABAAAAAAAAAAAAAAAAAAAAAEAAAgAAACAAAgA=</HashCode>
+      <FileName>Controllers\CustomerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.Controllers.ModelController&lt;T&gt;" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAEAAEAAAgAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ModelController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.Controllers.PaymentContractController" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAIAAAAAAAAAAAAAIAAAAEAAAgAAAAAAAAA=</HashCode>
+      <FileName>Controllers\PaymentContractController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.Controllers.PaymentController" Collapsed="true">
+    <Position X="16.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAAAAAAAAAAAAAAAMAAAgAAAAAAAAA=</HashCode>
+      <FileName>Controllers\PaymentController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.Controllers.PaymentRuleCatalogController" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAAAAAAAAAAAAAAAAAAAAAAAQEAAAgAQAAAAAAA=</HashCode>
+      <FileName>Controllers\PaymentRuleCatalogController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.Controllers.PaymentRuleController" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAAAAAAAAAAAAAAAAAAABAAAAAAEAAAgAEAAAAAAA=</HashCode>
+      <FileName>Controllers\PaymentRuleController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.Controllers.SaleController" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAAAAAAAAAAAEAAAAAAAAAAAAAEAAAgAAAAAAAAA=</HashCode>
+      <FileName>Controllers\SaleController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.Controllers.SupplierController" Collapsed="true">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAEAAACAAAAAAAAAAEAAAgAAAAAAAAA=</HashCode>
+      <FileName>Controllers\SupplierController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

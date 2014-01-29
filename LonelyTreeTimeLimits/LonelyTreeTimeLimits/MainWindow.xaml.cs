@@ -27,10 +27,13 @@ namespace LonelyTreeTimeLimits
       
         public MainWindow()
         {
- InitializeComponent();
+              InitializeComponent();
               Mf = new ModelFacade();
-              SalesListBox.ItemsSource = Mf.GetSales();
-
+              List<string> custList = new List<string>();
+              
+               
+            SalesListBox.ItemsSource =  Mf.GetCustomerNames();
+             
               
               
         }

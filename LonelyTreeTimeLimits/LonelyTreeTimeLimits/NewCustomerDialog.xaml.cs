@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Interfaces;
+using Model;
 
 namespace LonelyTreeTimeLimits
 {
@@ -19,9 +21,32 @@ namespace LonelyTreeTimeLimits
     /// </summary>
     public partial class NewCustomerDialog : Window
     {
-        public NewCustomerDialog()
+        ModelFacade mf;
+
+        public NewCustomerDialog(ModelFacade modface)
         {
             InitializeComponent();
+            mf = new ModelFacade();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if ( EmailTxtBox.Text !="" && FirstNameTxtbox.Text != "" && CustomerDatePicker.SelectedDate !=null || LastNameTxtbox.Text !="" 
+                || EmailTxtBox.Text !="Email" || PhoneTextBox.Text !="Phone")
+            {
+              ICustomer Customer = mf.CreateCustomer();
+              
+              Customer.Email = EmailTxtBox.Text;
+              Customer.FirstName = FirstNameTxtbox.Text;
+              Customer.LastName = FirstNameTxtbox.Text;
+              Customer.Skype = SkypeTxtBox.Text;
+              Customer.BirthDate = (DateTime)CustomerDatePicker.SelectedDate;
+
+
+            }
+
+            else
+            { FormFillErrorTxtbox.Content = "Please complete email firstname and lastname"; }
         }
     }
 }

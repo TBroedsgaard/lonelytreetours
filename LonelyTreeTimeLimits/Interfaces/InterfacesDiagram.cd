@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="Interfaces.IBooking">
+    <Position X="12" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABgAIAAAAAQAIAAAAAAAAAgAAAAAAAAAAAAAEAAIAA=</HashCode>
+      <FileName>IBooking.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Interfaces.ICustomer">
+    <Position X="0.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAEAEACAAAACAAAAAQAwAAAIAAAAAAgAAAAAAAAg=</HashCode>
+      <FileName>ICustomer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Interfaces.IEntity">
+    <Position X="8.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAEAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IEntity.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Interfaces.IPayment">
+    <Position X="7.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAQAAAAAAAAAAAAQACAAAAAAAA=</HashCode>
+      <FileName>IPayment.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Interfaces.IPaymentContract">
+    <Position X="14.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAACAAAAAAAACAAABAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>IPaymentContract.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Interfaces.IPaymentRule">
+    <Position X="3" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEgAAAAAAAAAAAAAAgAAAgAAAAAAABAAAA=</HashCode>
+      <FileName>IPaymentRule.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Interfaces.IPaymentRuleCatalog">
+    <Position X="5.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>IPaymentRuleCatalog.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Interfaces.ISale">
+    <Position X="9.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAABAAAAAAAAAAAAQgAAAAAAAAA=</HashCode>
+      <FileName>ISale.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Interfaces.ISupplier">
+    <Position X="16.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAEACAAgAAABAAAQAwAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>ISupplier.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Interfaces.BookingType">
+    <Position X="19" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CgAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BookingType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Interfaces.CustomerType">
+    <Position X="20.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomerType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Interfaces.Gender">
+    <Position X="22.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Gender.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Interfaces.ReferenceDate">
+    <Position X="19" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>ReferenceDate.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Interfaces.SaleStatus">
+    <Position X="20.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAQABAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>SaleStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Interfaces.SupplierType">
+    <Position X="22.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAIAAAAAAAAAAAAAgAAAAAAAIAAAAAA=</HashCode>
+      <FileName>SupplierType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

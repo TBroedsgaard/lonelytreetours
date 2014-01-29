@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DataAccess.BinaryHelper&lt;T&gt;">
+    <Position X="10.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BinaryHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.DataController&lt;T&gt;" Collapsed="true">
+    <Position X="9" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAABEQAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\DataController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.DataAccessFacade">
+    <Position X="20.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>REgAQAhQAQABwYAJDAAQALAAARAQIABAAoIAhmQNAAA=</HashCode>
+      <FileName>DataAccessFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Controllers.BookingController">
+    <Position X="9.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAEAAEAACgAAAABAAAA=</HashCode>
+      <FileName>Controllers\BookingController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Controllers.CustomerController">
+    <Position X="14" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAEAAEAACgAAAABAAAA=</HashCode>
+      <FileName>Controllers\CustomerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Controllers.PaymentContractController">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAEAAEAACgAAAABAAAA=</HashCode>
+      <FileName>Controllers\PaymentContractController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Controllers.PaymentController">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAEAAEAACgAAAABAAAA=</HashCode>
+      <FileName>Controllers\PaymentController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Controllers.PaymentRuleCatalogController">
+    <Position X="7.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAEAAEAACgAAAABAAAA=</HashCode>
+      <FileName>Controllers\PaymentRuleCatalogController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Controllers.PaymentRuleController">
+    <Position X="11.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAEAAEAACgAAAABAAAA=</HashCode>
+      <FileName>Controllers\PaymentRuleController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Controllers.SaleController">
+    <Position X="16.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAEAAEAACgAAAABAAAA=</HashCode>
+      <FileName>Controllers\SaleController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Controllers.SupplierController">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAEAAEAACgAAAABAAAA=</HashCode>
+      <FileName>Controllers\SupplierController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.Entities.BookingEntity">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABgAIAAAAAQAIAAAAAAAAAgAAAAAAAAAAAAAEAAIAA=</HashCode>
+      <FileName>Entities\BookingEntity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataAccess.Entities.CustomerEntity">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAEAEACAAAACAAAAAQAwAAAIAAAAAAgAAAAAAAAg=</HashCode>
+      <FileName>Entities\CustomerEntity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataAccess.Entities.EntityEntity" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAEAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\EntityEntity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataAccess.Entities.PaymentContractEntity">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAACAAAAAAAACAAABAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Entities\PaymentContractEntity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataAccess.Entities.PaymentEntity">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAQAAAAAAAAAAAAQACAAAAAAAA=</HashCode>
+      <FileName>Entities\PaymentEntity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataAccess.Entities.PaymentRuleCatalogEntity">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Entities\PaymentRuleCatalogEntity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataAccess.Entities.PaymentRuleEntity">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEgAAAAAAAAAAAAAAgAAAgAAAAAAABAAAA=</HashCode>
+      <FileName>Entities\PaymentRuleEntity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataAccess.Entities.SaleEntity">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAABAAAAAAAAAAAAQgAAAAAAAAA=</HashCode>
+      <FileName>Entities\SaleEntity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataAccess.Entities.SupplierEntity">
+    <Position X="17" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAEACAAgAAABAAAQAwAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Entities\SupplierEntity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
