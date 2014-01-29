@@ -9,12 +9,12 @@ namespace DataAccess.Controllers
 {
     internal class PaymentController: DataController<PaymentEntity>
     {
-        private const string FileName = "Payments.bin"; 
+        private const string FILENAME = "Payments.bin"; 
 
          public PaymentController()
         {
             binaryHelper = new BinaryHelper<PaymentEntity>();
-            entities = binaryHelper.Load(FileName);
+            entities = binaryHelper.Load(FILENAME);
             setNextId();
         }
 
@@ -28,7 +28,7 @@ namespace DataAccess.Controllers
 
              try
              {
-                 binaryHelper.Save(FileName, entities);
+                 binaryHelper.Save(FILENAME, entities);
              }
              catch
              {
@@ -53,7 +53,7 @@ namespace DataAccess.Controllers
              entities.Remove(oldPe);
              entities.Add(newPe);
 
-             binaryHelper.Save(FileName, entities);
+             binaryHelper.Save(FILENAME, entities);
 
              return (IPayment)newPe;
          }
