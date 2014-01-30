@@ -7,6 +7,7 @@ using Interfaces;
 
 namespace Model
 {
+    [Serializable]
     internal class Supplier : Entity, ISupplier
     {
         public SupplierType SupplierType { get; set; }
@@ -37,6 +38,11 @@ namespace Model
             CreatedDate = iSupplier.CreatedDate;
             Comment = iSupplier.Comment;
             Website = iSupplier.Website;
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }

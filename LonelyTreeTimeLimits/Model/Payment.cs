@@ -7,6 +7,7 @@ using Interfaces;
 
 namespace Model
 {
+    [Serializable]
     internal class Payment : Entity, IPayment
     {
         public IPaymentContract PaymentContract { get; set; }

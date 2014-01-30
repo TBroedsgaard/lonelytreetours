@@ -9,6 +9,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Model
 {
+    [Serializable]
     internal class Customer : Entity, ICustomer
     {
         public CustomerType CustomerType { get; set; }

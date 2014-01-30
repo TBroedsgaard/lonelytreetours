@@ -7,6 +7,7 @@ using Interfaces;
 
 namespace Model
 {
+    [Serializable]
     internal class Booking : Entity, IBooking
     {
         public ISale Sale { get; set; }
@@ -40,6 +41,11 @@ namespace Model
         public Booking(ISale iSale)
         {
             Sale = iSale;
+        }
+
+        public override string ToString()
+        {
+            return Id.ToString(); // +" " + Supplier.Name + " " + StartDate + " " + EndDate + " " + BookingType;
         }
     }
 }

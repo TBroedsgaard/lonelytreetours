@@ -7,6 +7,7 @@ using Interfaces;
 
 namespace Model
 {
+    [Serializable]
     internal class Sale : Entity, ISale
     {
         public SaleStatus SaleStatus { get; set; }

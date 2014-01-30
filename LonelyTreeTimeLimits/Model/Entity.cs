@@ -7,6 +7,7 @@ using Interfaces;
 
 namespace Model
 {
+    [Serializable]
     internal class Entity : IEntity
     {
         public int? Id { get; set; }
