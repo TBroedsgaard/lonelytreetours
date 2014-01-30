@@ -4,24 +4,21 @@
         Title="NewSaleWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     <Grid>
         <Label Content="StartDate" HorizontalAlignment="Left" Margin="44,62,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="CustomerCombo" HorizontalAlignment="Left" Margin="181,66,0,0" VerticalAlignment="Top" Width="201" SelectedIndex="0"/>
-        <ComboBox x:Name="TypeCombo" HorizontalAlignment="Left" Margin="387,66,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0"/>
-        <ComboBox x:Name="NewCustomerCombo" HorizontalAlignment="Left" Margin="512,66,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
-            <ListBoxItem Content="New Customer"/>
-        </ComboBox>
-        <Button x:Name="NewCustomerButton" Content="New Customer" HorizontalAlignment="Left" Margin="652,66,0,0" VerticalAlignment="Top" Width="108" Click="Button_Click"/>
+        <ComboBox x:Name="CustomerCombo" HorizontalAlignment="Left" Margin="559,66,0,0" VerticalAlignment="Top" Width="201" SelectedIndex="0"/>
+        <ComboBox x:Name="customerTypeCombo" HorizontalAlignment="Left" Margin="421,66,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0"/>
+        <Button x:Name="NewCustomerButton" Content="New Customer" HorizontalAlignment="Left" Margin="652,107,0,0" VerticalAlignment="Top" Width="108" Click="Button_Click"/>
         <ListBox x:Name="BookingsListbox" HorizontalAlignment="Left" Height="100" Margin="70,156,0,0" VerticalAlignment="Top" Width="365"/>
         <Label Content="Bookings" HorizontalAlignment="Left" Margin="71,125,0,0" VerticalAlignment="Top"/>
         <Button Content="Add" HorizontalAlignment="Left" Margin="450,167,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <Button Content="Edit" HorizontalAlignment="Left" Margin="450,194,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="editBookingButton" Content="Edit" HorizontalAlignment="Left" Margin="450,194,0,0" VerticalAlignment="Top" Width="75" Click="editBookingButton_Click"/>
         <Button Content="Delete" HorizontalAlignment="Left" Margin="450,234,0,0" VerticalAlignment="Top" Width="75"/>
         <Label x:Name="DateLabel" Content="20/1/2014" HorizontalAlignment="Left" Margin="111,62,0,0" VerticalAlignment="Top" Width="65" RenderTransformOrigin="-0.308,0.269"/>
-        <ComboBox x:Name="StatusCombo" HorizontalAlignment="Left" Margin="512,93,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
-            <ListBoxItem Content="Status"/>
+        <ComboBox x:Name="StatusCombo" HorizontalAlignment="Left" Margin="204,64,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
         </ComboBox>
         <Label Content="New Sale" HorizontalAlignment="Left" Margin="32,21,0,0" VerticalAlignment="Top" Width="120" FontSize="16"/>
         <TextBox x:Name="specialRequestTextbox" HorizontalAlignment="Left" Height="97" Margin="71,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="364"/>
         <Label Content="Special Request" HorizontalAlignment="Left" Margin="71,280,0,0" VerticalAlignment="Top" Width="105"/>
+        <Button x:Name="saveSaleButton" Content="Save Sale" HorizontalAlignment="Left" Margin="685,386,0,0" VerticalAlignment="Top" Width="75" Click="saveSaleButton_Click"/>
 
 
     </Grid>
