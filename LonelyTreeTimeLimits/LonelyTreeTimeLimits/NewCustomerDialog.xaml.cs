@@ -27,6 +27,12 @@ namespace LonelyTreeTimeLimits
         {
             InitializeComponent();
             mf = new ModelFacade();
+            customerTypeComboBox.ItemsSource = getCustomerTypes();
+        }
+
+        private List<string> getCustomerTypes()
+        {
+            return Enum.GetNames(typeof(CustomerType)).ToList();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -38,9 +44,11 @@ namespace LonelyTreeTimeLimits
               
               Customer.Email = EmailTxtBox.Text;
               Customer.FirstName = FirstNameTxtbox.Text;
-              Customer.LastName = FirstNameTxtbox.Text;
+              Customer.LastName = LastNameTxtbox.Text;
               Customer.Skype = SkypeTxtBox.Text;
               Customer.BirthDate = (DateTime)CustomerDatePicker.SelectedDate;
+
+                mf.UpdateCustomer(Customer);
 
 
             }

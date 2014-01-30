@@ -4,11 +4,7 @@
         Title="NewCustomerDialog" Height="506.464" Width="327.463" WindowStartupLocation="CenterScreen">
     <Grid>
         <TextBox x:Name="FirstNameTxtbox" HorizontalAlignment="Left" Height="23" Margin="33,40,0,0" TextWrapping="Wrap" Text="First name" VerticalAlignment="Top" Width="98"/>
-        <ComboBox HorizontalAlignment="Left" Margin="172,40,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
-            <ListBoxItem Content="Type"/>
-            <ListBoxItem Content="Bureau"/>
-            <ListBoxItem Content="Private Person"/>
-        </ComboBox>
+        <ComboBox x:Name="customerTypeComboBox" HorizontalAlignment="Left" Margin="172,40,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0"/>
         <TextBox x:Name="LastNameTxtbox" HorizontalAlignment="Left" Height="23" Margin="33,83,0,0" TextWrapping="Wrap" Text="Last name" VerticalAlignment="Top" Width="98"/>
         <TextBox x:Name="CountryTextBox" HorizontalAlignment="Left" Height="23" Margin="33,161,0,0" TextWrapping="Wrap" Text="Country" VerticalAlignment="Top" Width="102" RenderTransformOrigin="0.158,-0.217"/>
         <TextBox x:Name="EmailTxtBox" HorizontalAlignment="Left" Height="23" Margin="172,83,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="120"/>
