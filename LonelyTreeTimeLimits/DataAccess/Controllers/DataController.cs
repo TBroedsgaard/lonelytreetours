@@ -15,12 +15,12 @@ namespace DataAccess
 
         protected int? getNextId()
         {
-            return nextId++;
+            return ++nextId;
         }
 
         protected void setNextId()
         {
-            int maxId = 1;
+            int maxId = 0;
 
             foreach (IEntity entity in entities)
             {
