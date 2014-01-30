@@ -48,18 +48,8 @@ namespace LonelyTreeTimeLimits
 
               }
               
-             
-              
               SalesListBox.ItemsSource = customernames;
               SalesListBox.Items.Refresh();
-            
-              
-              
-        }
-
-        private void removecustomer(int Id)
-        {
-
         }
 
         private void salesDeleteButton_Click(object sender, RoutedEventArgs e)
@@ -69,29 +59,24 @@ namespace LonelyTreeTimeLimits
 		 if (c.Id == custID[SelectedCustomer])
 	{
         Mf.DeleteCustomer(c);
-        SalesListBox.Items.Refresh();
+       custList = Mf.GetCustomers();
+       SalesListBox.Items.Refresh();
 	}
 	}
-            
-           
-            
+
         }
 
         private void saleNewButton_Click(object sender, RoutedEventArgs e)
         {
-         
              NewSaleWindow NewSaleWindow = new NewSaleWindow(Mf);
              NewSaleWindow.Show();
              Mf.CreateSale();
              SalesListBox.Items.Refresh();
-
-
         }
 
         private void SalesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
           SelectedCustomer = SalesListBox.SelectedIndex;
-
         }
     }
 }
