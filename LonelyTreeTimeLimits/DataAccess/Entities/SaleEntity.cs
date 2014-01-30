@@ -16,7 +16,11 @@ namespace DataAccess.Entities
         public ICustomer Customer { get; set; }
 
         public SaleEntity(ISale iSale)
-        { 
+        {
+            Id = iSale.Id;
+            Deleted = iSale.Deleted;
+            LastUpdated = iSale.LastUpdated;
+
             CreatedDate = iSale.CreatedDate;
             Customer = iSale.Customer;
             SaleStatus = iSale.SaleStatus;
