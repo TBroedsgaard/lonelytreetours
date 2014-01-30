@@ -4,15 +4,21 @@
         Title="MainWindow" Height="520" Width="525" WindowStartupLocation="CenterScreen">
     <Grid>
 
-        <StackPanel HorizontalAlignment="Left" Height="405
-" Margin="54,56,0,0" VerticalAlignment="Top" Width="400" Grid.ColumnSpan="2">
+        <StackPanel HorizontalAlignment="Left" Height="405" Margin="54,56,0,0" VerticalAlignment="Top" Width="400" Grid.ColumnSpan="2">
             <StackPanel VerticalAlignment="Top">
-                <ListBox x:Name="SalesListBox" Height="360" HorizontalAlignment="Left" Width="400"/>
+                <ListView x:Name="salesListView" Height="360" HorizontalAlignment="Left" Width="400">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" Width="30" />
+                            <GridViewColumn Header="Customer" DisplayMemberBinding="{Binding Customer.FirstName}" Width="100"/>
+                            <GridViewColumn Header="Status" DisplayMemberBinding="{Binding SaleStatus}" Width="80"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
             </StackPanel>
             <StackPanel Height="45" Orientation="Horizontal">
                 <Button x:Name="salesDeleteButton" Content="Delete" Margin="0,0,0,0"  Width="120" Click="salesDeleteButton_Click"/>
-
-                <Button x:Name="salesEditButton" Content="Edit" Width="120" Margin="20,0,0,0" HorizontalAlignment="Left"/>
+                <Button x:Name="salesEditButton" Content="Edit" Width="120" Margin="20,0,0,0" HorizontalAlignment="Left" Click="salesEditButton_Click"/>
                 <Button x:Name="saleNewButton" Content="New" Width="120" Margin="20,0,0,0" Click="saleNewButton_Click"/>
             </StackPanel>
         </StackPanel>
