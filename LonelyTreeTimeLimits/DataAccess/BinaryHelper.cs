@@ -39,6 +39,9 @@ namespace DataAccess
                 //throw;
             }
 
+            if (entities == null)
+                entities = new List<T>();
+
             return entities;
         }
     }
