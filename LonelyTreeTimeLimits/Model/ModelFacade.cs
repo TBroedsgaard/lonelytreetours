@@ -206,7 +206,7 @@ namespace Model
             return iBooking;
         }
 
-        private IBooking UpdateBooking(IBooking iBooking)
+        public IBooking UpdateBooking(IBooking iBooking)
         {
             iBooking = bookingController.Update(iBooking);
             dataAccessFacade.UpdateBooking(iBooking);
@@ -254,10 +254,25 @@ namespace Model
             return iPaymentRule;
         }
 
-
-        public List<string> GetCustomerTypes()
+        public List<IBooking> GetBookings(ISale sale)
         {
-            return Enum.GetNames(typeof(CustomerType)).ToList();
+            List<IBooking> allBookings = bookingController.GetAll();
+
+            List<IBooking> bookings = new List<IBooking>();
+
+            foreach (IBooking booking in allBookings)
+            {
+                if (booking.Sale.Id == sale.Id)
+                    bookings.Add(booking);
+            }
+
+            return bookings;
+        }
+
+
+        public List<ISupplier> GetSuppliers()
+        {
+            return supplierController.GetAll();
         }
     }
 }
