@@ -26,7 +26,7 @@ namespace LonelyTreeTimeLimits
         public NewCustomerDialog(ModelFacade modface)
         {
             InitializeComponent();
-            mf = new ModelFacade();
+            mf = modface;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -40,8 +40,13 @@ namespace LonelyTreeTimeLimits
               Customer.FirstName = FirstNameTxtbox.Text;
               Customer.LastName = FirstNameTxtbox.Text;
               Customer.Skype = SkypeTxtBox.Text;
-              Customer.BirthDate = (DateTime)CustomerDatePicker.SelectedDate;
+              if(CustomerDatePicker.SelectedDate != null)     
+                {  Customer.BirthDate = (DateTime)CustomerDatePicker.SelectedDate; }
+              FormFillErrorTxtbox.Content = "Customer added";
 
+              mf.UpdateCustomer(Customer);
+
+              
 
             }
 

@@ -7,10 +7,10 @@
         <StackPanel HorizontalAlignment="Left" Height="405
 " Margin="54,56,0,0" VerticalAlignment="Top" Width="400" Grid.ColumnSpan="2">
             <StackPanel VerticalAlignment="Top">
-                <ListBox x:Name="SalesListBox" Height="360" HorizontalAlignment="Left" Width="400"/>
+                <ListBox x:Name="SalesListBox" Height="360" HorizontalAlignment="Left" Width="400" SelectionChanged="SalesListBox_SelectionChanged"/>
             </StackPanel>
             <StackPanel Height="45" Orientation="Horizontal">
-                <Button x:Name="salesDeleteButton" Content="Delete" Margin="0,0,0,0"  Width="120" Click="salesDeleteButton_Click"/>
+                <Button x:Name="salesDeleteButton" Content="Delete" Margin="0,0,0,0"  Width="120" Click="salesDeleteButton_Click" Height="45" VerticalAlignment="Bottom"/>
 
                 <Button x:Name="salesEditButton" Content="Edit" Width="120" Margin="20,0,0,0" HorizontalAlignment="Left"/>
                 <Button x:Name="saleNewButton" Content="New" Width="120" Margin="20,0,0,0" Click="saleNewButton_Click"/>
