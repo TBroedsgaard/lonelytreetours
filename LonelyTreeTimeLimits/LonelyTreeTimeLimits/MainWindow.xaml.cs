@@ -31,6 +31,8 @@ namespace LonelyTreeTimeLimits
         List<string> customernames;
         public MainWindow()
         {
+           
+              
               InitializeComponent();
               Mf = new ModelFacade();
               custList = new List<ICustomer>();
@@ -50,7 +52,12 @@ namespace LonelyTreeTimeLimits
               
               SalesListBox.ItemsSource = customernames;
               SalesListBox.Items.Refresh();
+
+              
+
         }
+
+
 
         private void salesDeleteButton_Click(object sender, RoutedEventArgs e)
         {
